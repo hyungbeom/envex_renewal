@@ -1,0 +1,481 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+/* ==========================================================================
+   1. Reset & Common Classes
+   ========================================================================== */
+* {
+  font-family: "Pretendard Variable", Pretendard, sans-serif;
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+/* 중앙 정렬용 공통 컨테이너 */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. Header & Hero Section
+   ========================================================================== */
+.bg-container {
+  width: 100%;
+  height: 560px;
+  background-image:
+    linear-gradient(to bottom, #022F7D 0%, rgba(3, 85, 227, 0) 50%),
+    url('/img/pc/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header-bg {
+  background-color: rgba(0, 106, 255, 0.5);
+  height: 84px;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  height: 100%; /* 헤더 높이를 꽉 채워 마우스 호버 영역 확보 */
+  gap: 52px;
+}
+
+.nav-item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-link {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.176px;
+  transition: color 0.2s ease;
+}
+
+/* 💡 메인 메뉴에 마우스를 올렸을 때 노란색으로 변경 */
+.nav-item:hover .nav-link {
+  color: #FFC107;
+}
+
+/* ==================== 드롭다운 메뉴 스타일 ==================== */
+.dropdown {
+  display: none; /* 기본적으로는 숨김 */
+  position: absolute;
+  top: 100%; /* nav-item의 바닥(헤더 끝선)에 딱 맞춰서 시작 */
+  left: 50%; /* 가운데 정렬을 위한 위치 이동 */
+  transform: translateX(-50%);
+  width: 160px; /* 드롭다운 박스 너비 */
+  background-color: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  flex-direction: column;
+}
+
+/* 💡 마우스를 올리면 드롭다운 메뉴가 나타남 */
+.nav-item:hover .dropdown {
+  display: flex;
+}
+
+.dropdown a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 16px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+/* 💡 드롭다운 안의 항목에 마우스를 올렸을 때 (파란 배경 + 흰 글씨) */
+.dropdown a:hover {
+  background-color: #125BDB;
+  color: #ffffff;
+}
+
+.mypage {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lang-switch span {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 100%;
+  letter-spacing: -0.176px;
+  cursor: pointer;
+}
+
+.mypage_text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.176px;
+  cursor: pointer;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: calc(560px - 132px);
+}
+
+.title1 {
+  color: #022F7D;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 160%;
+  letter-spacing: -0.352px;
+}
+
+.title2 {
+  color: #022F7D;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 120%;
+  letter-spacing: -0.704px;
+  padding-top: 20px;
+}
+
+.title2 span {
+  font-weight: 500;
+}
+
+.regist_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px 12px 22px;
+  background-color: #022F7D;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.264px;
+  cursor: pointer;
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  aspect-ratio: 1/1;
+}
+
+/* ==========================================================================
+   3. Menu Section
+   ========================================================================== */
+.menu-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 440px;
+  width: 100%;
+}
+
+.menu_text {
+  flex: 1;
+  max-width: 240px;
+  aspect-ratio: 240 / 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.264px;
+  cursor: pointer;
+
+  /* 💡 추가된 부분: 자연스러운 애니메이션과 튀어나올 준비 */
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
+}
+
+/* 💡 마우스 호버 시 튀어나오는 효과 (핵심!) */
+.menu_text:hover {
+  transform: scale(1.25); /* 크기를 1.25배 확대하여 주변 영역을 덮음 */
+  z-index: 10; /* 주변 요소들보다 맨 앞으로 튀어나오게 설정 */
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.6); /* 깊이감 있는 짙은 그림자 */
+
+  /* 첨부 이미지처럼 호버 시 글씨가 사라지게 하려면 아래 속성을 유지하세요 */
+  color: transparent;
+}
+
+.menu-bg-1 { background: linear-gradient(#00D0FF80, #00D0FF80), url('/img/menu/Menu.jpg') 50% / cover no-repeat; }
+.menu-bg-2 { background: linear-gradient(#008CFF80, #008CFF80), url('/img/menu/Menu1.jpg') 50% / cover no-repeat; }
+.menu-bg-3 { background: linear-gradient(#00D0FF80, #00D0FF80), url('/img/menu/Menu2.jpg') 50% / cover no-repeat; }
+.menu-bg-4 { background: linear-gradient(#4800FF80, #4800FF80), url('/img/menu/Menu3.jpg') 50% / cover no-repeat; }
+.menu-bg-5 { background: linear-gradient(#8000FF80, #8000FF80), url('/img/menu/Menu4.jpg') 50% / cover no-repeat; }
+.menu-bg-6 { background: linear-gradient(#4800FF80, #4800FF80), url('/img/menu/Menu6.jpg') 50% / cover no-repeat; }
+
+/* 💡 호버 상태 (색상 필터를 빼고 '원본 이미지'만 다시 설정하여 선명하게 보여줌) */
+.menu-bg-1:hover { background: url('/img/menu/Menu.jpg') 50% / cover no-repeat; }
+.menu-bg-2:hover { background: url('/img/menu/Menu1.jpg') 50% / cover no-repeat; }
+.menu-bg-3:hover { background: url('/img/menu/Menu2.jpg') 50% / cover no-repeat; }
+.menu-bg-4:hover { background: url('/img/menu/Menu3.jpg') 50% / cover no-repeat; }
+.menu-bg-5:hover { background: url('/img/menu/Menu4.jpg') 50% / cover no-repeat; }
+.menu-bg-6:hover { background: url('/img/menu/Menu6.jpg') 50% / cover no-repeat; }
+/* ==========================================================================
+   4. Intro Section
+   ========================================================================== */
+.intro-section {
+  background: linear-gradient(to top right, #0355E3 0%, #022F7D 100%);
+  color: #fff;
+  padding: 80px 0;
+}
+
+.intro-container {
+  display: flex;
+  gap: 98px;
+}
+
+.intro-image {
+  width: 732px;
+}
+
+.intro-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-title {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.352px;
+}
+
+.intro-desc {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 160%;
+  letter-spacing: -0.22px;
+  padding-top: 24px;
+}
+
+.intro-stats {
+  display: flex;
+  gap: 24px;
+  margin-top: auto;
+}
+
+.stat-value { font-size: 20px; }
+.count { font-size: 40px; font-weight: 800; line-height: 100%; letter-spacing: -3.2px; padding-right: 10px; }
+.stat-label { padding-top: 28px; font-size: 14px; }
+
+/* ==========================================================================
+   5. Notice Section
+   ========================================================================== */
+.notice-section {
+  color: black;
+  padding: 120px 0;
+}
+
+.notice-container {
+  display: flex;
+  gap: 98px;
+}
+
+.notice-left {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.notice-title {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 100%;
+  letter-spacing: -0.44px;
+}
+
+.notice-more {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.notice-more span {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.176px;
+}
+
+.notice-list {
+  width: 100%;
+}
+
+.notice-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 32px 0;
+  border-bottom: 1px solid #eee;
+  cursor : pointer;
+}
+
+/* 첫 번째 항목 상단 여백 조절 */
+.notice-item:first-child {
+  padding-top: 0;
+  padding-bottom: 32px;
+}
+
+.notice-badge {
+  font-weight: bold;
+  color: #006AFF;
+  margin-right: 16px;
+}
+
+.notice-date {
+  margin-left: auto;
+  color: #888;
+}
+
+/* ==========================================================================
+   6. Partner Section
+   ========================================================================== */
+.partner-section {
+  color: black;
+  padding: 40px 0;
+}
+
+.partner-section.bordered {
+  border-bottom: 1px solid #eee;
+}
+
+.partner-container {
+  display: flex;
+  gap: 180px;
+}
+
+.partner_title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 100%;
+  letter-spacing: -0.352px;
+}
+
+.partner-main-logo {
+  width: 303px;
+  padding-top: 24px;
+}
+
+.partner-logo-wrap {
+  height: 56px;
+  padding-top: 24px;
+}
+
+.partner-logo-group {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 48px;
+}
+
+.partner-logo-group.gap-sm { gap: 42px; }
+.logo-md { height: 25px; }
+.logo-sm { height: 22px; }
+
+/* ==========================================================================
+   7. Footer Section
+   ========================================================================== */
+.footer-section {
+  padding-top: 40px;
+  background-color: #0E0E0E;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 160%;
+  letter-spacing: -0.154px;
+}
+
+.footer-sns {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-sns img { cursor: pointer; }
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.divider {
+  height: 12px;
+  border-left: 1px solid #aaa;
+}
+
+.footer-biz {
+  padding-top: 40px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 14px;
+  padding-top: 88px;
+  font-weight: 500;
+  line-height: 160%;
+  letter-spacing: -0.154px;
+}
+
+/* 파묻히는 배경 텍스트 */
+.footer-bg-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #444444;
+  font-size: 246px;
+  font-weight: 900;
+  line-height: 0.75;
+  letter-spacing: -2.86px;
+  padding-top: 50px;
+  margin-bottom: -30px;
+}
+
+.footer-bg-text span {
+  font-weight: 100;
+  margin-left: 30px;
+}
+
