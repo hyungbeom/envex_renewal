@@ -59,22 +59,17 @@
   border-bottom: 1px solid #e0e0e0;
 }
 
+.faq-head .content-title-wrap {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
 .faq-head__title {
-  margin: 0 0 8px;
-  font-size: 28px;
+  margin: 0;
   font-weight: 800;
   line-height: 1.3;
   letter-spacing: -0.03em;
   color: #003d8f;
-}
-
-.faq-head__title::before {
-  content: '';
-  display: block;
-  width: 48px;
-  height: 3px;
-  margin-bottom: 10px;
-  background: #ffc107;
 }
 
 .faq-head__sub {

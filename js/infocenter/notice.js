@@ -115,9 +115,11 @@
     titleCell.appendChild(link);
 
     var dateCell = document.createElement('td');
+    dateCell.className = 'notice-table__date-cell';
     dateCell.textContent = item.date;
 
     var viewsCell = document.createElement('td');
+    viewsCell.className = 'notice-table__views-cell';
     viewsCell.textContent = formatViews(item.views);
 
     tr.appendChild(noCell);

@@ -1,9 +1,5 @@
 @import url('../exhibitors/guide.css');
 
-.info-subnav--visitor .info-subnav-inner {
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-}
-
 .visitor-content {
   background: #fff;
   padding: 160px 24px 72px;
@@ -121,21 +117,11 @@
 }
 
 .visitor-block-head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   margin-bottom: 14px;
-}
-
-.visitor-block-head__bar {
-  width: 4px;
-  height: 20px;
-  background: #ffc107;
 }
 
 .visitor-block-head h2 {
   margin: 0;
-  font-size: 30px;
   font-weight: 900;
   color: #006aff;
 }
@@ -290,10 +276,6 @@
 
   .visitor-info-row strong {
     font-size: 20px;
-  }
-
-  .visitor-block-head h2 {
-    font-size: 22px;
   }
 
   .visitor-btn {

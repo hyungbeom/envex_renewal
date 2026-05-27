@@ -72,9 +72,13 @@
   margin-bottom: 36px;
 }
 
+.conf-head__left .content-title-wrap {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
 .conf-head__title {
-  margin: 0 0 14px;
-  font-size: 26px;
+  margin: 0;
   font-weight: 900;
   color: #006aff;
   letter-spacing: -0.03em;
@@ -333,16 +337,8 @@
   margin-bottom: 12px;
 }
 
-.conf-check-modal__bar {
-  width: 4px;
-  height: 22px;
-  background: #ffc107;
-  flex-shrink: 0;
-}
-
 .conf-check-modal__title {
   margin: 0;
-  font-size: 22px;
 }
 
 .conf-check-modal__lead {

@@ -79,6 +79,101 @@ html, body {
   .nav-item--current > .nav-link {
     color: #FDD000;
   }
+
+  /* 메인: 서브페이지와 동일한 투명 헤더 */
+  .bg-container .header-bg {
+    background: none !important;
+    background-color: transparent !important;
+  }
+
+  .bg-container .header-inner > a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  /* 데스크톱 히어로: 태블릿 스타일 초기화, 2줄 메인 타이틀 */
+  .bg-container {
+    display: block;
+    height: 560px;
+  }
+
+  .bg-container .hero-content.container {
+    max-width: 1440px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    align-self: auto;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex: none;
+    height: calc(560px - 132px);
+    min-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+  }
+
+  .hero-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .title1-single,
+  .title2-tablet {
+    display: block !important;
+  }
+
+  .title1-multi,
+  .title1-mobile-design,
+  .title2-single,
+  .title2-multi,
+  .title2-mobile-design {
+    display: none !important;
+  }
+
+  .title1 {
+    color: #022F7D;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 160%;
+  }
+
+  .title2 {
+    color: #022F7D;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 120%;
+    letter-spacing: -0.704px;
+    padding-top: 20px;
+  }
+
+  .title2-num {
+    font-weight: 500;
+  }
+
+  .regist_button {
+    flex-shrink: 0;
+    align-self: flex-end;
+    margin-top: 0;
+    padding: 12px 16px 12px 22px;
+    font-size: 22px;
+    background-color: #022F7D;
+    background-image: none;
+  }
+
+  .regist_button .arrow-icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /* 서브페이지 공통: 서브메뉴바 아래 → 본문 시작 간격 */
@@ -90,6 +185,115 @@ html, body {
   .info-page-top ~ .info-details-section {
     padding-top: 120px !important;
   }
+}
+
+/* ==========================================================================
+   Content section titles (콘텐츠 영역 섹션 타이틀 공통)
+   ========================================================================== */
+.content-title-wrap,
+.layout-head__title-wrap,
+.loc-section-head__title-wrap,
+.guide-block-head__title-wrap,
+.app-page-head__title-wrap,
+.schedule-title-wrap,
+.reg-doc-title-wrap,
+.app-agree__title-wrap {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 24px;
+  padding-top: 24px;
+  border-top: 4px solid #ffc107;
+  box-sizing: border-box;
+}
+
+.content-title,
+.layout-head__title,
+.loc-section-head__title,
+.guide-block-head__title,
+.app-page-head__title,
+.exh-section-head__title,
+.faq-head__title,
+.conf-head__title,
+.conf2-head__title,
+.conf-apply-head__title,
+.visitor-block-head > h2,
+.visitor-block-head > h3,
+.promo-section__title,
+.notice-board__title,
+.schedule-title,
+.reg-doc-title,
+.app-agree__title,
+.appw-section-head__title,
+.guide-modal-section__title,
+.guide-facility-ad__title,
+.conf-check-modal__title,
+.conf-past-results__title,
+.report-section__title {
+  font-size: 22px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .content-title,
+  .layout-head__title,
+  .loc-section-head__title,
+  .guide-block-head__title,
+  .app-page-head__title,
+  .exh-section-head__title,
+  .faq-head__title,
+  .conf-head__title,
+  .conf2-head__title,
+  .conf-apply-head__title,
+  .visitor-block-head > h2,
+.visitor-block-head > h3,
+  .promo-section__title,
+  .notice-board__title,
+  .schedule-title,
+  .reg-doc-title,
+  .app-agree__title,
+  .appw-section-head__title,
+  .guide-modal-section__title,
+  .guide-facility-ad__title,
+  .conf-check-modal__title,
+  .conf-past-results__title,
+  .report-section__title {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .content-title,
+  .layout-head__title,
+  .loc-section-head__title,
+  .guide-block-head__title,
+  .app-page-head__title,
+  .exh-section-head__title,
+  .faq-head__title,
+  .conf-head__title,
+  .conf2-head__title,
+  .conf-apply-head__title,
+  .visitor-block-head > h2,
+.visitor-block-head > h3,
+  .promo-section__title,
+  .notice-board__title,
+  .schedule-title,
+  .reg-doc-title,
+  .app-agree__title,
+  .appw-section-head__title,
+  .guide-modal-section__title,
+  .guide-facility-ad__title,
+  .conf-check-modal__title,
+  .conf-past-results__title,
+  .report-section__title {
+    font-size: 32px;
+  }
+}
+
+/* 상단 강조선 래퍼 안 제목 */
+.content-title-wrap > :is(h1, h2, h3, h4, .layout-head__title, .loc-section-head__title, .guide-block-head__title, .app-page-head__title, .exh-section-head__title, .schedule-title, .reg-doc-title, .contact-title, .app-agree__title, .appw-section-head__title, .guide-modal-section__title, .guide-facility-ad__title, .conf-check-modal__title, .conf-head__title, .conf-past-results__title, .notice-board__title, .faq-head__title, .promo-section__title, .report-section__title) {
+  margin: 0;
+  padding-left: 0;
+  border-left: none;
 }
 
 /* ==================== 드롭다운 메뉴 스타일 ==================== */
@@ -179,6 +383,11 @@ html, body {
 
 .title1-multi,
 .title2-multi {
+  display: none;
+}
+
+/* 태블릿 전용 메인 타이틀(2줄) — 기본은 숨김 */
+.title2-tablet {
   display: none;
 }
 
@@ -474,16 +683,58 @@ html, body {
 .logo-md { height: 25px; }
 .logo-sm { height: 22px; }
 
+.partner-section--sponsor {
+  overflow-x: clip;
+}
+
 .partner-sponsor-wrap {
   width: 100%;
+  overflow-x: clip;
+  box-sizing: border-box;
+}
+
+/* .container 와 함께 쓸 때 중앙 정렬 유지 (max-width: 100% 로 덮이지 않게) */
+.partner-sponsor-wrap.container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.partner-block {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1025px) {
+  .partner-section--sponsor .partner-sponsor-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .partner-section--sponsor .partner_title {
+    flex-shrink: 0;
+  }
+
+  .partner-section--sponsor .sponsor-marquee {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .partner-section--sponsor .sponsor-marquee-content {
+    gap: 48px;
+    padding-right: 48px;
+  }
 }
 
 .sponsor-marquee {
   display: block;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-top: 16px;
+  width: 100%;
+  max-width: 100%;
+  margin: 16px 0 0;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .sponsor-marquee-row {
@@ -638,21 +889,23 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  width: 100%;
+  max-width: 100%;
   padding: 50px 24px 0;
   margin-bottom: -30px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .footer-brand-mark {
   display: inline-block;
+  max-width: 100%;
   font-size: 246px;
   font-weight: 900;
   line-height: 0.75;
   letter-spacing: -2.86px;
   white-space: nowrap;
   color: #444;
-  transform: scale(var(--footer-fit, 1));
-  transform-origin: center bottom;
 }
 
 .footer-year {
@@ -672,7 +925,7 @@ html, body {
   }
 }
 
-/* 모바일·태블릿: 화면 너비에 맞게 축소 (JS --footer-fit 연동) */
+/* 모바일·태블릿: 화면 너비에 맞게 축소 (JS font-size 연동, clamp 폴백) */
 @media (max-width: 1024px) {
   .footer-bg-text {
     width: 100%;
@@ -683,7 +936,11 @@ html, body {
   }
 
   .footer-brand-mark {
-    font-size: 120px;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: clamp(48px, 20vw, 120px);
     letter-spacing: -0.02em;
     color: #b8b8b8;
   }
@@ -1016,31 +1273,49 @@ body.menu-open {
   }
 
   .bg-container {
-    height: auto;
+    height: 560px;
     min-height: 560px;
     background-image:
       linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 45%),
       url('/img/pc/background.jpg');
+    background-size: cover;
     background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bg-container .hero-content.container {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    align-self: stretch;
+    min-width: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
   }
 
   .hero-content {
+    flex: 1;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 28px;
-    min-height: calc(560px - 64px);
-    padding-top: 32px;
+    min-height: 0;
+    padding-top: 147px;
     padding-bottom: 48px;
     height: auto;
+    box-sizing: border-box;
   }
 
   .title1 {
     color: #022F7D;
-    font-size: 20px;
+    font-size: 32px;
     font-weight: 500;
-    line-height: 150%;
-    letter-spacing: -0.22px;
+    line-height: 160%;
+    letter-spacing: -0.352px;
   }
 
   .title1-single {
@@ -1053,19 +1328,21 @@ body.menu-open {
 
   .title2 {
     color: #022F7D;
-    font-size: 40px;
+    font-size: 64px;
     font-weight: 800;
-    line-height: 125%;
-    letter-spacing: -0.44px;
-    padding-top: 16px;
+    line-height: 120%;
+    letter-spacing: -0.704px;
+    padding-top: 0;
   }
 
-  .title2-single {
-    display: block;
+  .title2-single,
+  .title2-multi,
+  .title2-mobile-design {
+    display: none !important;
   }
 
-  .title2-multi {
-    display: none;
+  .title2-tablet {
+    display: block !important;
   }
 
   .title2-num {
@@ -1075,10 +1352,16 @@ body.menu-open {
   .regist_button {
     width: auto;
     max-width: none;
-    font-size: 18px;
-    padding: 14px 24px;
-    background-color: #022F7D;
-    background-image: none;
+    margin-top: 0;
+    font-size: 22px;
+    padding: 20px 20px 20px 40px;
+    background-color: transparent;
+    background-image: linear-gradient(to top right, #022F7D 0%, #0355E3 100%);
+  }
+
+  .regist_button .arrow-icon {
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -1086,15 +1369,15 @@ body.menu-open {
 @media (min-width: 768px) and (max-width: 1024px) {
   .intro-section {
     padding: 0;
-    background: none;
+    background: linear-gradient(to top right, #0355E3 0%, #022F7D 100%);
   }
 
   .intro-container {
     flex-direction: column;
     gap: 0;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 80px 20px 0;
     max-width: 100%;
+    box-sizing: border-box;
   }
 
   .intro-image {
@@ -1103,26 +1386,27 @@ body.menu-open {
     display: block;
     object-fit: cover;
     aspect-ratio: 16 / 9;
+    margin: 0;
   }
 
   .intro-text-group {
-    background: linear-gradient(to top right, #0355E3 0%, #022F7D 100%);
-    padding: 48px 24px 56px;
+    background: none;
+    padding: 95px 0 56px;
     color: #fff;
   }
 
   .intro-title {
-    font-size: 26px;
+    font-size: 32px;
     font-weight: 600;
     line-height: 140%;
-    letter-spacing: -0.286px;
+    letter-spacing: -0.352px;
   }
 
   .intro-desc {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
     line-height: 160%;
-    letter-spacing: -0.176px;
+    letter-spacing: -0.22px;
     padding-top: 20px;
     color: rgba(255, 255, 255, 0.95);
   }
@@ -1176,11 +1460,11 @@ body.menu-open {
 
   .notice-left {
     width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
     align-self: auto;
-    margin-bottom: 8px;
+    margin-bottom: 0;
   }
 
   .notice-title {
@@ -1189,12 +1473,19 @@ body.menu-open {
   }
 
   .notice-actions {
-    flex-direction: row;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 80px;
+    gap: 0;
   }
 
   .notice-more {
     display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 25px;
   }
 
   .notice-pagination {
@@ -1236,7 +1527,7 @@ body.menu-open {
   }
 
   .notice-item:first-child {
-    padding-top: 16px;
+    padding-top: 0;
     padding-bottom: 24px;
   }
 }
@@ -1297,11 +1588,17 @@ body.menu-open {
   }
 
   .footer-copyright {
-    padding: 64px 24px 0;
+    padding: 84px 24px 0;
     font-size: 12px;
     line-height: 160%;
     max-width: none;
     margin: 0;
+  }
+
+  .footer-bg-text {
+    padding: 160px 24px 0;
+    margin-bottom: -12px;
+    box-sizing: border-box;
   }
 
   /* Partners — tablet (세로 스택, 주최·후원 한 줄) */
@@ -1311,6 +1608,12 @@ body.menu-open {
     align-items: flex-start;
   }
 
+  .partner-block {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
   .partner_title {
     font-size: 24px;
   }
@@ -1318,12 +1621,12 @@ body.menu-open {
   .partner-main-logo {
     width: auto;
     max-width: 300px;
-    padding-top: 16px;
+    padding-top: 0;
   }
 
   .partner-logo-wrap {
     height: auto;
-    padding-top: 16px;
+    padding-top: 0;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -1348,9 +1651,19 @@ body.menu-open {
     flex-shrink: 0;
   }
 
+  .partner-sponsor-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
   .partner-section--sponsor .partner_title {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .sponsor-marquee {
+    margin-top: 0;
   }
 
   .sponsor-marquee-content {
@@ -1419,7 +1732,12 @@ body.menu-open {
 
   .menu_text {
     min-height: 160px;
-    font-size: 22px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 12px;
+    box-sizing: border-box;
+    font-size: 24px;
   }
 }
 
@@ -1429,15 +1747,17 @@ body.menu-open {
     padding: 80px 16px;
     box-sizing: border-box;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, minmax(100px, 1fr));
+    grid-template-rows: repeat(3, 200px);
     gap: 0;
   }
 
   .menu_text {
-    min-height: 100px;
+    min-height: 200px;
+    height: 200px;
     font-size: 15px;
     font-weight: 700;
     letter-spacing: -0.165px;
+    box-sizing: border-box;
   }
 }
 
@@ -1481,18 +1801,21 @@ body.menu-open {
     background-image:
       linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 42%),
       url('/img/pc/background.jpg');
-    background-position: center center;
+    background-size: cover;
+    background-position: center top, 24% center;
+    background-repeat: no-repeat;
   }
 
   .hero-content {
     flex-direction: column;
     align-items: stretch;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 26px;
     min-height: calc(520px - 56px);
-    padding-top: 34px;
+    padding-top: 124px;
     padding-bottom: 44px;
     height: auto;
+    box-sizing: border-box;
   }
 
   .hero-text {
@@ -1501,10 +1824,10 @@ body.menu-open {
 
   .title1 {
     color: #022F7D;
-    font-size: 14px;
+    font-size: 24px;
     font-weight: 500;
-    line-height: 155%;
-    letter-spacing: -0.154px;
+    line-height: 140%;
+    letter-spacing: -0.264px;
   }
 
   .title1-single {
@@ -1521,11 +1844,11 @@ body.menu-open {
 
   .title2 {
     color: #022F7D;
-    font-size: 26px;
+    font-size: 44px;
     font-weight: 800;
     line-height: 130%;
-    letter-spacing: -0.286px;
-    padding-top: 14px;
+    letter-spacing: -0.484px;
+    padding-top: 50px;
   }
 
   .title2-single {
@@ -1553,7 +1876,7 @@ body.menu-open {
     line-height: 1.2;
     padding: 15px 24px;
     justify-content: center;
-    align-self: flex-start;
+    align-self: center;
     background: linear-gradient(90deg, #022F7D 0%, #0355E3 55%, #006AFF 100%);
   }
 
@@ -1588,13 +1911,19 @@ body.menu-open {
   }
 
   .notice-actions {
-    align-self: flex-end;
-    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 98px;
+    margin-top: 0;
     margin-bottom: 16px;
   }
 
   .notice-more {
     display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   .notice-pagination {
@@ -1638,12 +1967,12 @@ body.menu-open {
   /* Intro — mobile */
   .intro-section {
     padding: 0;
-    background: none;
+    background: linear-gradient(180deg, #0355E3 0%, #022F7D 100%);
   }
 
   .intro-container {
     flex-direction: column;
-    gap: 0;
+    gap: 120px;
     padding-left: 0;
     padding-right: 0;
     max-width: 100%;
@@ -1658,16 +1987,16 @@ body.menu-open {
   }
 
   .intro-text-group {
-    background: linear-gradient(to top right, #0355E3 0%, #022F7D 100%);
-    padding: 32px 16px 40px;
+    background: none;
+    padding: 0 16px 40px;
     color: #fff;
   }
 
   .intro-title {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 600;
     line-height: 150%;
-    letter-spacing: -0.198px;
+    letter-spacing: -0.264px;
   }
 
   .intro-desc {
@@ -1682,11 +2011,11 @@ body.menu-open {
   .intro-stats {
     flex-direction: column;
     gap: 0;
-    margin-top: 28px;
+    margin-top: 72px;
   }
 
   .stat-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom: none;
     padding: 20px 0;
   }
 
@@ -1695,7 +2024,6 @@ body.menu-open {
   }
 
   .stat-item:last-child {
-    border-bottom: none;
     padding-bottom: 0;
   }
 
@@ -1796,8 +2124,6 @@ body.menu-open {
   }
 
   .sponsor-marquee {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
     margin-top: 16px;
   }
 
@@ -1873,6 +2199,15 @@ body.menu-open {
     margin: 0 auto;
   }
 
+  .footer-bg-text {
+    padding: 40px 16px 0;
+    margin-bottom: -12px;
+  }
+
+  .footer-brand-mark {
+    font-size: clamp(44px, 18.5vw, 120px);
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -1882,14 +2217,6 @@ body.menu-open {
 
   .hero-content {
     min-height: calc(480px - 56px);
-  }
-
-  .title2 {
-    font-size: 22px;
-  }
-
-  .title1 {
-    font-size: 13px;
   }
 
   .regist_button {
@@ -1902,10 +2229,45 @@ body.menu-open {
     width: 18px;
     height: 18px;
   }
+}
 
-  .menu_text {
-    min-height: 88px;
-    font-size: 14px;
+/* 서브페이지 히어로 — 모바일 높이·타이포 통일 (페이지별 CSS보다 우선) */
+@media (max-width: 767px) {
+  .exh-hero {
+    height: 284px !important;
+    min-height: 284px !important;
+    max-height: 284px !important;
+    flex: 0 0 284px !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .exh-hero__inner {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  .exh-hero__inner h1 {
+    font-size: 32px !important;
+    font-weight: 800;
+    line-height: 130% !important;
+    letter-spacing: -0.03em;
+    margin: 0 0 12px !important;
+  }
+
+  .exh-hero__inner p {
+    font-size: 16px !important;
+    font-weight: 500;
+    line-height: 168% !important;
+    letter-spacing: -0.02em;
+    margin: 0 !important;
+    color: rgba(255, 255, 255, 0.94);
   }
 }
 

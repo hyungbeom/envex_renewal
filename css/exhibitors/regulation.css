@@ -50,9 +50,12 @@
   width: 100%;
 }
 
+.reg-doc-title-wrap {
+  display: inline-block;
+}
+
 .reg-doc-title {
-  margin: 0 0 18px;
-  font-size: 22px;
+  margin: 0;
   font-weight: 800;
   line-height: 130%;
   letter-spacing: -0.03em;

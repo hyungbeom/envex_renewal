@@ -62,18 +62,8 @@
   margin-bottom: 24px;
 }
 
-.appw-section-head__bar {
-  flex-shrink: 0;
-  width: 4px;
-  height: 24px;
-  margin-top: 2px;
-  background: #ffc107;
-  border-radius: 1px;
-}
-
 .appw-section-head__title {
   margin: 0 0 4px;
-  font-size: 20px;
   font-weight: 800;
   line-height: 130%;
   letter-spacing: -0.03em;

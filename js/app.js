@@ -94,19 +94,33 @@
       return;
     }
 
-    if (window.innerWidth > 1024) {
-      footerMark.style.removeProperty('--footer-fit');
+    footerMark.style.removeProperty('font-size');
+
+    const wrapStyle = getComputedStyle(footerWrap);
+    const horizontalPadding =
+      parseFloat(wrapStyle.paddingLeft) + parseFloat(wrapStyle.paddingRight);
+    const available = footerWrap.clientWidth - horizontalPadding;
+
+    if (available <= 0) {
       return;
     }
 
-    footerMark.style.setProperty('--footer-fit', '1');
+    const baseSize = parseFloat(getComputedStyle(footerMark).fontSize);
+    if (!baseSize) {
+      return;
+    }
 
-    const available = footerWrap.clientWidth;
-    const needed = footerMark.scrollWidth;
+    let needed = footerMark.scrollWidth;
+    if (needed <= available) {
+      return;
+    }
 
-    if (needed > available && available > 0) {
-      const scale = (available / needed) * 0.98;
-      footerMark.style.setProperty('--footer-fit', String(scale));
+    footerMark.style.fontSize = (baseSize * (available / needed) * 0.98) + 'px';
+
+    needed = footerMark.scrollWidth;
+    if (needed > available) {
+      const currentSize = parseFloat(getComputedStyle(footerMark).fontSize);
+      footerMark.style.fontSize = (currentSize * (available / needed) * 0.98) + 'px';
     }
   }
 

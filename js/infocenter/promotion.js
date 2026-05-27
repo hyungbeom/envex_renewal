@@ -181,7 +181,9 @@
 
       block.innerHTML =
         '<header class="promo-section__head">' +
+        '<span class="content-title-wrap">' +
         '<h2 class="promo-section__title">' + renderSectionTitle(section) + '</h2>' +
+        '</span>' +
         '<p class="promo-section__lead">' + section.lead + '</p>' +
         '</header>';
 

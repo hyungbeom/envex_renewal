@@ -167,25 +167,11 @@
 }
 
 .exh-section-head__title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   margin: 0 0 32px;
-  padding: 0;
-  border: none;
-  font-size: 24px;
   font-weight: 800;
   line-height: 130%;
   letter-spacing: -0.03em;
   color: #006aff;
-}
-
-.exh-section-head__bar {
-  flex-shrink: 0;
-  width: 4px;
-  height: 24px;
-  background: #ffc107;
-  border-radius: 1px;
 }
 
 .exh-grid {
@@ -274,11 +260,6 @@
 
   .exh-section-head__title {
     margin-bottom: 60px;
-    font-size: 28px;
-  }
-
-  .exh-section-head__bar {
-    height: 28px;
   }
 
   .exh-grid--stack,
@@ -328,11 +309,6 @@
 
   .exh-section-head__title {
     margin-bottom: 60px;
-    font-size: 26px;
-  }
-
-  .exh-section-head__bar {
-    height: 26px;
   }
 
   .exh-section-divider {
@@ -441,17 +417,6 @@
 
   .exh-section-head__title {
     margin-bottom: 60px;
-    font-size: 20px;
-  }
-
-  .exh-section-head__bar {
-    width: 3px;
-    height: 20px;
-  }
-
-  .exh-hero {
-    min-height: 240px;
-    padding: 40px 16px 0;
   }
 
   .info-page-top--exh .info-subnav {

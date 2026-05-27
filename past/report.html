@@ -107,6 +107,26 @@
         <p>지난 ENVEX의 발자취를 돌아보며 환경산업의 흐름과 미래를 함께 확인하세요.</p>
       </div>
     </section>
+
+    <nav class="report-subnav" aria-label="전시회 연도 선택">
+      <div class="report-subnav__inner">
+        <div class="report-years">
+          <div class="report-years__item">
+            <a href="report.html?year=2026" class="report-years__tab" data-report-year="2026">2026</a>
+          </div>
+          <div class="report-years__item">
+            <a href="report.html?year=2025" class="report-years__tab" data-report-year="2025">2025</a>
+          </div>
+          <div class="report-years__item">
+            <a href="report.html?year=2024" class="report-years__tab" data-report-year="2024">2024</a>
+          </div>
+          <div class="report-years__item">
+            <a href="report.html?year=2023" class="report-years__tab" data-report-year="2023">2023</a>
+          </div>
+          <div class="report-years__item report-years__item--more" data-report-years-more></div>
+        </div>
+      </div>
+    </nav>
   </div>
 
   <div class="mobile-nav-overlay" hidden></div>
@@ -122,6 +142,48 @@
       </div>
     </div>
     <div class="mobile-nav-list">
+      <details class="mobile-nav-item">
+        <summary>전시회안내</summary>
+        <div class="mobile-nav-sub">
+          <a href="../about/information.html">전시회 개요</a>
+          <a href="../about/exhibition.html">전시 품목</a>
+          <a href="../about/layout.html">전시 배치도</a>
+          <a href="../about/location.html">찾아오시는 길</a>
+        </div>
+      </details>
+      <details class="mobile-nav-item">
+        <summary>참가안내</summary>
+        <div class="mobile-nav-sub">
+          <a href="../exhibitors/guide.html">절차 및 부스안내</a>
+          <a href="../exhibitors/application.html">온라인 참가신청</a>
+          <a href="../exhibitors/regulation.html">참가 가이드</a>
+          <a href="../exhibitors/schedule.html">일정 및 체크리스트</a>
+          <a href="../exhibitors/contact.html">문의처</a>
+        </div>
+      </details>
+      <details class="mobile-nav-item">
+        <summary>참관안내</summary>
+        <div class="mobile-nav-sub">
+          <a href="../visitors/visitor_guide.html">참관안내</a>
+          <a href="../visitors/application.html">사전등록 및 확인</a>
+        </div>
+      </details>
+      <details class="mobile-nav-item">
+        <summary>부대행사</summary>
+        <div class="mobile-nav-sub">
+          <a href="../conference/schedule.html">전체일정</a>
+          <a href="../conference/schedule_past.html">세미나 신청확인</a>
+        </div>
+      </details>
+      <details class="mobile-nav-item">
+        <summary>정보센터</summary>
+        <div class="mobile-nav-sub">
+          <a href="../infocenter/notice.html">공지사항</a>
+          <a href="../infocenter/event.html">행사안내</a>
+          <a href="../infocenter/promotion.html">홍보자료</a>
+          <a href="../infocenter/faq.html">FAQ</a>
+        </div>
+      </details>
       <details class="mobile-nav-item" open>
         <summary>지난전시회</summary>
         <div class="mobile-nav-sub">
@@ -131,6 +193,10 @@
           <a href="report.html?year=2023">2023</a>
         </div>
       </details>
+    </div>
+
+    <div class="mobile-nav-footer">
+      <a class="mobile-nav-cta" href="#">온라인 전시회</a>
     </div>
   </nav>
 
@@ -145,8 +211,6 @@
           </svg>
         </button>
       </aside>
-
-      <nav class="report-years" data-report-years aria-label="전시회 연도 선택"></nav>
 
       <div class="report-summary" data-report-summary></div>
 

@@ -55,21 +55,15 @@
   margin-bottom: 22px;
 }
 
+.schedule-title-wrap {
+  display: inline-block;
+}
+
 .schedule-title {
   margin: 0;
-  font-size: 26px;
   font-weight: 900;
   letter-spacing: -0.03em;
   color: #006aff;
-}
-
-.schedule-title::after {
-  content: '';
-  display: block;
-  width: 48px;
-  height: 3px;
-  margin-top: 10px;
-  background: #ffc107;
 }
 
 .schedule-header__right {

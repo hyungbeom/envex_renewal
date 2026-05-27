@@ -162,51 +162,44 @@
   }
 
   function renderYears() {
-    var nav = document.querySelector('[data-report-years]');
-    if (!nav) return;
-    nav.innerHTML = '';
-
-    yearTabs.forEach(function (year) {
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'report-years__tab' + (state.year === year ? ' is-active' : '');
-      btn.textContent = year;
-      btn.addEventListener('click', function () {
-        state.year = year;
-        updateUrl();
-        renderAll();
-      });
-      nav.appendChild(btn);
+    document.querySelectorAll('[data-report-year]').forEach(function (link) {
+      var year = link.getAttribute('data-report-year');
+      var isActive = state.year === year;
+      link.classList.toggle('is-active', isActive);
+      if (isActive) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
     });
 
-    var more = el('div', 'report-years__more');
+    var more = document.querySelector('[data-report-years-more]');
+    if (!more || more.dataset.bound === 'true') return;
+
+    more.classList.add('report-years__more');
+
     var moreBtn = el('button', 'report-years__more-btn', '이전 전시회 <span aria-hidden="true">▼</span>');
     moreBtn.type = 'button';
     var list = el('ul', 'report-years__more-list');
     olderYears.forEach(function (year) {
+      if (!reports[year]) {
+        reports[year] = {
+          summary: {
+            name: 'ENVEX' + year,
+            place: '코엑스(COEX)',
+            date: year + '년 개최',
+            exhibitors: { main: '자료 준비 중', sub: '' },
+            visitors: { main: '자료 준비 중', sub: '' }
+          },
+          emptyDetail: true
+        };
+      }
       var li = document.createElement('li');
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.textContent = year;
-      b.addEventListener('click', function () {
-        if (!reports[year]) {
-          reports[year] = {
-            summary: {
-              name: 'ENVEX' + year,
-              place: '코엑스(COEX)',
-              date: year + '년 개최',
-              exhibitors: { main: '자료 준비 중', sub: '' },
-              visitors: { main: '자료 준비 중', sub: '' }
-            },
-            emptyDetail: true
-          };
-        }
-        state.year = year;
-        more.classList.remove('is-open');
-        updateUrl();
-        renderAll();
-      });
-      li.appendChild(b);
+      var link = document.createElement('a');
+      link.className = 'report-years__more-link';
+      link.href = 'report.html?year=' + year;
+      link.textContent = year;
+      li.appendChild(link);
       list.appendChild(li);
     });
     moreBtn.addEventListener('click', function () {
@@ -214,7 +207,7 @@
     });
     more.appendChild(moreBtn);
     more.appendChild(list);
-    nav.appendChild(more);
+    more.dataset.bound = 'true';
 
     document.addEventListener('click', function (e) {
       if (!more.contains(e.target)) more.classList.remove('is-open');
@@ -275,26 +268,45 @@
     return wrap;
   }
 
+  function formatCountryTotal(text) {
+    return String(text).replace(/(\d+)/g, '<span class="report-country-foot__num">$1</span>');
+  }
+
   function renderCountryTable(data) {
     var table = el('table', 'report-country-table');
-    table.innerHTML = '<thead><tr><th colspan="2">국가명</th><th colspan="2">국가명</th><th colspan="2">국가명</th></tr>' +
-      '<tr><th>국가명</th><th>출품업체수</th><th>국가명</th><th>출품업체수</th><th>국가명</th><th>출품업체수</th></tr></thead>';
+    table.innerHTML =
+      '<thead><tr>' +
+      '<th scope="col">국가명</th><th scope="col">출품업체수</th>' +
+      '<th scope="col">국가명</th><th scope="col">출품업체수</th>' +
+      '<th scope="col">국가명</th><th scope="col">출품업체수</th>' +
+      '</tr></thead>';
+
     var tbody = document.createElement('tbody');
-    var maxRows = 5;
+    var maxRows = 0;
+    data.countries.forEach(function (col) {
+      if (col.length > maxRows) maxRows = col.length;
+    });
     for (var r = 0; r < maxRows; r++) {
       var tr = document.createElement('tr');
       data.countries.forEach(function (col) {
         var cell = col[r] || ['', ''];
-        tr.innerHTML += '<td>' + cell[0] + '</td><td>' + (cell[1] || '') + '</td>';
+        tr.innerHTML += '<td>' + (cell[0] || '') + '</td><td>' + (cell[1] || '') + '</td>';
       });
       tbody.appendChild(tr);
     }
     table.appendChild(tbody);
-    var foot = el('p', 'report-country-foot', data.countryTotal);
-    var frag = document.createDocumentFragment();
-    frag.appendChild(table);
-    frag.appendChild(foot);
-    return frag;
+
+    var tfoot = document.createElement('tfoot');
+    var footRow = document.createElement('tr');
+    var footCell = document.createElement('td');
+    footCell.colSpan = 6;
+    footCell.className = 'report-country-table__total';
+    footCell.innerHTML = formatCountryTotal(data.countryTotal);
+    footRow.appendChild(footCell);
+    tfoot.appendChild(footRow);
+    table.appendChild(tfoot);
+
+    return table;
   }
 
   function renderSections(data) {
@@ -310,32 +322,33 @@
     }
     if (downloadWrap) downloadWrap.hidden = false;
 
-    var sec1 = el('section', 'report-section');
-    sec1.innerHTML = '<h2 class="report-section__title"><span class="report-section__bar" aria-hidden="true"></span>참가기업 분석</h2>';
-    var block1 = el('div', 'report-block');
-    block1.innerHTML = '<div class="report-block__side"><h3>국가별 분석</h3></div><div class="report-block__main"></div>';
+    var sec1 = el('section', 'report-section report-section--country');
+    sec1.innerHTML =
+      '<span class="content-title-wrap"><h2 class="report-section__title">참가기업 분석</h2></span>';
+    var block1 = el('div', 'report-block report-block--country');
+    block1.innerHTML =
+      '<div class="report-block__side"><h3>국가별 분석</h3></div>' +
+      '<div class="report-block__main"></div>';
     block1.querySelector('.report-block__main').appendChild(renderCountryTable(data));
     sec1.appendChild(block1);
 
     var sec2 = el('section', 'report-section');
-    sec2.innerHTML = '<h2 class="report-section__title"><span class="report-section__bar" aria-hidden="true"></span>참가기업 설문 분석</h2>';
+    sec2.innerHTML = '<span class="content-title-wrap"><h2 class="report-section__title">참가기업 설문 분석</h2></span>';
     var block2a = el('div', 'report-block');
     block2a.innerHTML = '<div class="report-block__side"><h3>전시회 참가 목적</h3><p>' + data.purpose.lead + '</p></div><div class="report-block__main"></div>';
     block2a.querySelector('.report-block__main').appendChild(renderBars(data.purpose.items));
     var block2b = el('div', 'report-block');
-    block2b.style.marginTop = '40px';
     block2b.innerHTML = '<div class="report-block__side"><h3>참가 횟수</h3><p>' + data.participation.lead + '</p></div><div class="report-block__main"></div>';
     block2b.querySelector('.report-block__main').appendChild(renderDonut(data.participation.items));
     sec2.appendChild(block2a);
     sec2.appendChild(block2b);
 
     var sec3 = el('section', 'report-section');
-    sec3.innerHTML = '<h2 class="report-section__title"><span class="report-section__bar" aria-hidden="true"></span>' + data.visitors.total + '</h2>';
+    sec3.innerHTML = '<span class="content-title-wrap"><h2 class="report-section__title">' + data.visitors.total + '</h2></span>';
     var block3a = el('div', 'report-block');
     block3a.innerHTML = '<div class="report-block__side"><h3>참관 목적</h3><p>' + data.visitors.purposeLead + '</p></div><div class="report-block__main"></div>';
     block3a.querySelector('.report-block__main').appendChild(renderBars(data.visitors.purpose));
     var block3b = el('div', 'report-block');
-    block3b.style.marginTop = '40px';
     block3b.innerHTML = '<div class="report-block__side"><h3>참관객 관심 분야</h3><p>' + data.visitors.interestLead + '</p></div><div class="report-block__main"></div>';
     var interestMain = block3b.querySelector('.report-block__main');
     var grid = el('div', 'report-interest-grid');

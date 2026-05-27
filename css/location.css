@@ -131,11 +131,7 @@
 }
 
 .loc-section-head__title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   margin: 0 0 16px;
-  font-size: 28px;
   font-weight: 800;
   line-height: 130%;
   letter-spacing: -0.03em;
@@ -146,12 +142,10 @@
   margin-bottom: 0;
 }
 
-.loc-section-head__bar {
-  flex-shrink: 0;
-  width: 4px;
-  height: 28px;
-  background: #ffc107;
-  border-radius: 1px;
+/* 교통정보: 상단 노란 선 래퍼 — 공통은 style.css .content-title-wrap */
+.loc-section--traffic .loc-section-head__title {
+  display: block;
+  margin: 0;
 }
 
 .loc-section-head__lead {
@@ -592,10 +586,6 @@ button[data-scroll-top]:hover {
     padding: 120px 24px 72px;
   }
 
-  .loc-section-head__title {
-    font-size: 26px;
-  }
-
   .loc-floats {
     right: 20px;
     top: 180px;
@@ -675,13 +665,6 @@ button[data-scroll-top]:hover {
     margin-bottom: 20px;
   }
 
-  .loc-section--parking .loc-section-head__bar {
-    display: block;
-    width: 48px;
-    height: 4px;
-    margin: 0 0 14px;
-  }
-
   .loc-section--parking .loc-section-head__desc {
     max-width: none;
   }
@@ -729,11 +712,6 @@ button[data-scroll-top]:hover {
 }
 
 @media (max-width: 767px) {
-  .exh-hero {
-    min-height: 240px;
-    padding: 40px 16px 0;
-  }
-
   .info-page-top--exh .info-subnav {
     margin-top: 0 !important;
   }
@@ -757,16 +735,6 @@ button[data-scroll-top]:hover {
 
   .loc-section-head {
     margin-bottom: 20px;
-  }
-
-  .loc-section-head__title {
-    font-size: 22px;
-    gap: 10px;
-  }
-
-  .loc-section-head__bar {
-    width: 4px;
-    height: 22px;
   }
 
   .loc-section-head__lead {
@@ -821,13 +789,6 @@ button[data-scroll-top]:hover {
   .loc-section--parking .loc-section-head__title {
     display: block;
     margin-bottom: 16px;
-  }
-
-  .loc-section--parking .loc-section-head__bar {
-    display: block;
-    width: 40px;
-    height: 4px;
-    margin: 0 0 12px;
   }
 
   .loc-section--parking .loc-section-head__desc p {

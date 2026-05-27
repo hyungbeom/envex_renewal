@@ -109,56 +109,51 @@
   color: rgba(255, 255, 255, 0.94);
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  .info-page-top--guide .info-subnav-inner {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
-    row-gap: 20px;
-    column-gap: 0;
-    padding: 24px 32px 28px !important;
-  }
-
-  .info-page-top--guide .info-subnav__link:nth-child(1) {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: start;
-  }
-
-  .info-page-top--guide .info-subnav__link:nth-child(2) {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: center;
-  }
-
-  .info-page-top--guide .info-subnav__link:nth-child(3) {
-    grid-column: 3;
-    grid-row: 1;
-    justify-self: end;
-  }
-
-  .info-page-top--guide .info-subnav__link:nth-child(4) {
-    grid-column: 1;
-    grid-row: 2;
-    justify-self: start;
-  }
-
-  .info-page-top--guide .info-subnav__link:nth-child(5) {
-    grid-column: 2;
-    grid-row: 2;
-    justify-self: center;
-  }
-}
-
+/* 모바일: 참가안내 5메뉴 — 2×3 그리드, 흰 1px 구분선, 활성 진한 남색 / 비활성 밝은 파랑 */
 @media (max-width: 767px) {
-  .info-page-top--guide .info-subnav__link:nth-child(n + 3) {
-    border-bottom: 1px solid #fff !important;
+  .info-page-top--guide .info-subnav-inner:has(> .info-subnav__link:nth-child(5):last-child) {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1px !important;
+    background: #fff !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    box-sizing: border-box;
   }
 
-  .info-page-top--guide .info-subnav__link:nth-child(5) {
-    grid-column: 1 / -1;
+  /* 3행 오른쪽 빈 칸(디자인 스펙) */
+  .info-page-top--guide .info-subnav-inner:has(> .info-subnav__link:nth-child(5):last-child)::after {
+    content: '';
+    display: block;
+    grid-column: 2;
+    grid-row: 3;
+    background: #006aff;
+    align-self: stretch;
+    pointer-events: none;
+  }
+
+  .info-page-top--guide .info-subnav-inner:has(> .info-subnav__link:nth-child(5):last-child) > .info-subnav__link {
+    border: none !important;
     border-right: none !important;
     border-bottom: none !important;
+    border-radius: 0 !important;
+    background: #006aff !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 140% !important;
+    min-height: 0;
+    padding: 16px !important;
+    box-sizing: border-box;
+  }
+
+  .info-page-top--guide .info-subnav-inner:has(> .info-subnav__link:nth-child(5):last-child) > .info-subnav__link.is-active {
+    background: #00205b !important;
+    color: #fff !important;
+    font-weight: 800 !important;
   }
 }
 
@@ -185,18 +180,12 @@
   margin-bottom: 28px;
 }
 
-.guide-block-head__accent {
-  display: block;
-  width: 40px;
-  height: 4px;
-  margin-bottom: 12px;
-  background: #ffc107;
-  border-radius: 1px;
+.guide-block-head__title-wrap {
+  display: inline-block;
 }
 
 .guide-block-head__title {
-  margin: 0 0 12px;
-  font-size: 28px;
+  margin: 0;
   font-weight: 800;
   line-height: 130%;
   letter-spacing: -0.03em;
@@ -819,17 +808,8 @@ body.guide-modal-open {
   min-width: 0;
 }
 
-.guide-modal-section__bar {
-  flex-shrink: 0;
-  width: 4px;
-  height: 24px;
-  background: #ffc107;
-  border-radius: 1px;
-}
-
 .guide-modal-section__title {
   margin: 0;
-  font-size: 22px;
   font-weight: 800;
   line-height: 130%;
   letter-spacing: -0.03em;
@@ -915,17 +895,8 @@ body.guide-modal-open {
   border-bottom: 1px solid #e0e0e0;
 }
 
-.guide-facility-ad__bar {
-  flex-shrink: 0;
-  width: 4px;
-  height: 24px;
-  background: #ffc107;
-  border-radius: 1px;
-}
-
 .guide-facility-ad__title {
   margin: 0;
-  font-size: 22px;
   font-weight: 800;
   line-height: 130%;
   letter-spacing: -0.03em;
@@ -1153,10 +1124,6 @@ button[data-scroll-top]:hover {
     padding: 160px 24px 72px;
   }
 
-  .guide-block-head__title {
-    font-size: 26px;
-  }
-
   .guide-steps {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
@@ -1180,11 +1147,6 @@ button[data-scroll-top]:hover {
 }
 
 @media (max-width: 767px) {
-  .exh-hero {
-    min-height: 240px;
-    padding: 40px 16px 0;
-  }
-
   .info-page-top--exh .info-subnav {
     margin-top: 0 !important;
   }
@@ -1204,15 +1166,6 @@ button[data-scroll-top]:hover {
 
   .guide-section {
     margin-bottom: 56px;
-  }
-
-  .guide-block-head__title {
-    font-size: 22px;
-  }
-
-  .guide-block-head__accent {
-    width: 32px;
-    margin-bottom: 10px;
   }
 
   .guide-block-head__row {
@@ -1308,10 +1261,6 @@ button[data-scroll-top]:hover {
   }
 
   .guide-modal-section__title {
-    font-size: 20px;
-  }
-
-  .guide-facility-ad__title {
     font-size: 20px;
   }
 
