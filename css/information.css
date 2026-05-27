@@ -21,6 +21,15 @@ body {
 
 :root {
   --content-max-width: 1440px;
+  --header-height: 84px;
+  /* 데스크톱: 헤더 하단 ↔ 히어로 h1 상단 */
+  --hero-title-offset: 100px;
+  /* 데스크톱: 히어로 본문(설명) 하단 ↔ 서브메뉴 바 상단 */
+  --hero-subnav-offset: 120px;
+  --subnav-height: 100px;
+  --subnav-font-size: 24px;
+  --subnav-item-width: 220px;
+  --subnav-item-gap: 24px;
 }
 
 /* 서브페이지 본문 컨테이너 (max-width 1440px) */
@@ -30,7 +39,14 @@ body {
 .guide-content-inner,
 .app-content-inner,
 .visitor-content-inner,
-.conf-content-inner {
+.conf-content-inner,
+.schedule-content-inner,
+.contact-content-inner,
+.reg-content-inner,
+.notice-content-inner,
+.faq-content-inner,
+.promo-content-inner,
+.report-content-inner {
   max-width: var(--content-max-width);
   margin-left: auto;
   margin-right: auto;
@@ -51,6 +67,52 @@ body {
   .info-page-top .header-bg {
     background: none !important;
     background-color: transparent !important;
+  }
+
+  /*
+   * exh-hero 패턴 공통 (참가안내, 정보센터, 전시회안내 등)
+   * 헤더(84px)를 히어로 배경 위에 겹치고,
+   * 타이틀은 헤더 아래 100px, 본문 끝~서브메뉴는 120px
+   */
+  .info-page-top--exh {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    background: none !important;
+  }
+
+  .info-page-top--exh .header-bg,
+  .info-page-top--exh .exh-hero {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .info-page-top--exh .exh-hero {
+    z-index: 1;
+    width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+    justify-content: center;
+    padding: calc(var(--header-height) + var(--hero-title-offset)) 24px var(--hero-subnav-offset);
+  }
+
+  .info-page-top--exh .header-bg {
+    z-index: 2;
+    align-self: start;
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .info-page-top--exh .header-inner {
+    background: transparent !important;
+  }
+
+  .info-page-top--exh .info-subnav {
+    grid-row: 2;
+    grid-column: 1;
+    z-index: 2;
+    margin-top: 0 !important;
   }
 }
 
@@ -90,38 +152,86 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0;
+  gap: var(--subnav-item-gap);
 }
 
 .info-subnav__link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 36px;
-  font-size: 16px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.92);
+  width: var(--subnav-item-width);
+  padding: 0;
+  font-size: var(--subnav-font-size);
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.8;
   text-decoration: none;
-  border-bottom: 3px solid transparent;
+  border: none;
+  border-bottom: none;
   box-sizing: border-box;
   white-space: nowrap;
+  letter-spacing: -0.02em;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 .info-subnav__link.is-active {
-  font-weight: 700;
-  color: #ffc107;
-  border-bottom-color: #ffc107;
+  font-weight: 800;
+  color: #fff;
+  opacity: 1;
+  border-bottom: none;
 }
 
 .info-subnav__link:hover {
+  opacity: 1;
   color: #fff;
 }
 
-/* 서브메뉴 바로 아래 본문 타이틀까지 간격 */
-@media (min-width: 768px) {
-  .info-page-top + main.exh-content,
-  .info-page-top + .info-details-section {
-    padding-top: 160px !important;
+.info-subnav__link.is-active:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+/* 데스크톱: 서브메뉴 바 높이 100px, 타이포 24px */
+@media (min-width: 1025px) {
+  .info-page-top .info-subnav {
+    min-height: var(--subnav-height);
+    height: var(--subnav-height);
+  }
+
+  .info-page-top .info-subnav-inner {
+    min-height: var(--subnav-height);
+    height: 100%;
+    padding: 0 24px;
+    gap: var(--subnav-item-gap);
+  }
+
+  .info-page-top .info-subnav__link {
+    height: 100%;
+    min-height: var(--subnav-height);
+    width: var(--subnav-item-width);
+    padding: 0;
+    font-size: var(--subnav-font-size);
+    font-weight: 500;
+    color: #fff;
+    opacity: 0.8;
+    border-bottom: none;
+  }
+
+  .info-page-top .info-subnav__link.is-active {
+    font-weight: 800;
+    color: #fff;
+    opacity: 1;
+    border-bottom: none;
+  }
+
+  .info-page-top .info-subnav__link:hover:not(.is-active) {
+    color: #fff;
+    opacity: 1;
+  }
+
+  .info-page-top .info-subnav__link.is-active:hover {
+    color: #fff;
+    opacity: 1;
   }
 }
 
@@ -188,6 +298,7 @@ body {
     font-size: 16px !important;
     font-weight: 500 !important;
     color: #fff !important;
+    opacity: 0.8;
     border: none !important;
     border-bottom: none !important;
     background: transparent !important;
@@ -221,9 +332,16 @@ body {
   .info-subnav__link.is-active {
     color: #fff !important;
     font-weight: 800 !important;
+    opacity: 1 !important;
+    border-bottom: none !important;
   }
 
-  .info-subnav__link:hover {
+  .info-subnav__link:hover:not(.is-active) {
+    color: #fff !important;
+    opacity: 1 !important;
+  }
+
+  .info-subnav__link.is-active:hover {
     color: #fff !important;
   }
 }

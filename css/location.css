@@ -570,7 +570,7 @@ button[data-scroll-top]:hover {
 
 @media (min-width: 768px) {
   .info-page-top + main.loc-content {
-    padding-top: 160px !important;
+    padding-top: 120px !important;
   }
 }
 
@@ -589,7 +589,7 @@ button[data-scroll-top]:hover {
   }
 
   .loc-content {
-    padding: 160px 24px 72px;
+    padding: 120px 24px 72px;
   }
 
   .loc-section-head__title {

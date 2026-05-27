@@ -109,19 +109,6 @@
   color: rgba(255, 255, 255, 0.94);
 }
 
-/* 참가안내 서브메뉴 5개 */
-.info-page-top--guide .info-subnav__link {
-  padding: 20px 22px;
-  font-size: 15px;
-}
-
-@media (min-width: 1025px) {
-  .info-page-top--guide .info-subnav__link {
-    padding: 20px 28px;
-    font-size: 16px;
-  }
-}
-
 @media (min-width: 768px) and (max-width: 1024px) {
   .info-page-top--guide .info-subnav-inner {
     display: grid !important;
@@ -1144,7 +1131,7 @@ button[data-scroll-top]:hover {
 @media (min-width: 768px) {
   .info-page-top + main.guide-content,
   .info-page-top + main.exh-content.guide-content {
-    padding-top: 160px !important;
+    padding-top: 120px !important;
   }
 }
 

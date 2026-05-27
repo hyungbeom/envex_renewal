@@ -75,6 +75,23 @@ html, body {
   color: #FFC107;
 }
 
+@media (min-width: 1025px) {
+  .nav-item--current > .nav-link {
+    color: #FDD000;
+  }
+}
+
+/* 서브페이지 공통: 서브메뉴바 아래 → 본문 시작 간격 */
+@media (min-width: 768px) {
+  .info-page-top ~ main {
+    padding-top: 120px !important;
+  }
+
+  .info-page-top ~ .info-details-section {
+    padding-top: 120px !important;
+  }
+}
+
 /* ==================== 드롭다운 메뉴 스타일 ==================== */
 .dropdown {
   display: none; /* 기본적으로는 숨김 */

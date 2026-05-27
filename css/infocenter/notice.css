@@ -41,7 +41,7 @@
 }
 
 .info-page-top--center .nav-item--current > .nav-link {
-  color: #ffc107;
+  color: #fdd000;
 }
 
 .exh-hero {
@@ -111,9 +111,7 @@
   color: rgba(255, 255, 255, 0.94);
 }
 
-.info-subnav--center .info-subnav-inner {
-  gap: 8px;
-}
+/* info-subnav spacing/width is standardized in information.css */
 
 /* ----- 본문 ----- */
 .notice-content {

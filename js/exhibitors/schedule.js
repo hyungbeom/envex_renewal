@@ -36,9 +36,16 @@
       li.setAttribute('data-step', step.no);
       li.setAttribute('data-type', step.type);
 
+      var inner = document.createElement('div');
+      inner.className = 'schedule-card__inner';
+
       var badge = document.createElement('div');
       badge.className = 'schedule-card__badge schedule-card__badge--' + step.type;
       badge.textContent = step.no;
+
+      var divider = document.createElement('div');
+      divider.className = 'schedule-card__divider';
+      divider.setAttribute('aria-hidden', 'true');
 
       var content = document.createElement('div');
       content.className = 'schedule-card__content';
@@ -62,8 +69,10 @@
         content.appendChild(date);
       }
 
-      li.appendChild(badge);
-      li.appendChild(content);
+      inner.appendChild(badge);
+      inner.appendChild(divider);
+      inner.appendChild(content);
+      li.appendChild(inner);
       grid.appendChild(li);
     });
   }

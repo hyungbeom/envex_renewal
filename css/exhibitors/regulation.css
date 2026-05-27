@@ -45,8 +45,9 @@
 }
 
 .reg-terms-wrap {
-  max-width: 960px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
+  width: 100%;
 }
 
 .reg-doc-title {

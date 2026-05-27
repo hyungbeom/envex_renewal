@@ -417,7 +417,7 @@ button[data-scroll-top]:focus-visible {
 
 @media (min-width: 768px) {
   .info-page-top + main.layout-content {
-    padding-top: 160px !important;
+    padding-top: 120px !important;
   }
 }
 
@@ -436,7 +436,7 @@ button[data-scroll-top]:focus-visible {
   }
 
   .layout-content {
-    padding: 160px 24px 72px;
+    padding: 120px 24px 72px;
   }
 
   .layout-head__title {
