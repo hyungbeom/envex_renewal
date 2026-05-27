@@ -1,0 +1,278 @@
+@import url('./guide.css');
+
+/* ----- 문의처 ----- */
+.contact-content {
+  background: #fff;
+  padding: 64px 24px 96px;
+}
+
+.contact-content-inner {
+  position: relative;
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-floats {
+  position: fixed;
+  right: max(16px, calc((100vw - var(--content-max-width)) / 2 + 16px));
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-floats__online {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #006aff;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+}
+
+.contact-floats__top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+}
+
+.contact-box {
+  width: 100%;
+  margin: 0;
+  padding: 40px 48px 48px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.contact-title {
+  margin: 0 0 28px;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+.contact-title__label {
+  color: #006aff;
+  margin-right: 8px;
+}
+
+.contact-title__org {
+  color: #111;
+}
+
+.contact-box__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-basic-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.contact-basic-table th,
+.contact-basic-table td {
+  padding: 12px 0;
+  vertical-align: top;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-basic-table tr:last-child th,
+.contact-basic-table tr:last-child td {
+  border-bottom: none;
+}
+
+.contact-basic-table th {
+  width: 100px;
+  padding-right: 24px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #111;
+  text-align: left;
+}
+
+.contact-basic-table td {
+  font-size: 14px;
+  color: #222;
+}
+
+.contact-basic-email__main {
+  display: inline;
+  font-size: 14px;
+  font-weight: 800;
+  color: #111;
+  margin-right: 8px;
+}
+
+.contact-basic-email__value {
+  font-size: 14px;
+  font-weight: 900;
+  color: #111;
+}
+
+.contact-basic-email__sub {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: #006aff;
+}
+
+.contact-member-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.contact-member-table th,
+.contact-member-table td {
+  border: 1px solid #e0e0e0;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #222;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+.contact-member-table thead th {
+  background: #f5f5f5;
+  font-weight: 800;
+  text-align: center;
+  color: #333;
+}
+
+.contact-member-table__col-type {
+  width: 18%;
+}
+
+.contact-member-table__col-name {
+  width: 22%;
+}
+
+.contact-member-table__col-phone {
+  width: 18%;
+}
+
+.contact-member-table__group {
+  text-align: center;
+  font-weight: 800;
+  background: #fff;
+}
+
+.contact-links {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.contact-links__row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 14px 0;
+}
+
+.contact-links__row:not(:last-child) {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-links__label {
+  font-weight: 800;
+  font-size: 14px;
+  color: #111;
+  line-height: 1.5;
+}
+
+.contact-links__value {
+  font-size: 14px;
+  color: #222;
+  line-height: 1.6;
+}
+
+.contact-links__a {
+  color: #111;
+  font-size: 15px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.contact-links__a:hover {
+  text-decoration: underline;
+}
+
+.contact-links__hint {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.contact-links__hint a {
+  color: #006aff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-links__hint a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .contact-content {
+    padding-top: 160px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-floats {
+    right: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-content {
+    padding: 40px 16px 72px;
+  }
+
+  .contact-box {
+    padding: 24px 16px;
+  }
+
+  .contact-basic-table th {
+    width: 72px;
+    padding-right: 12px;
+  }
+
+  .contact-links__row {
+    grid-template-columns: 80px 1fr;
+    gap: 12px;
+  }
+
+  .contact-member-table {
+    font-size: 12px;
+  }
+
+  .contact-member-table th,
+  .contact-member-table td {
+    padding: 8px 6px;
+  }
+}

@@ -1,0 +1,391 @@
+@import url('./schedule.css');
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.conf-prepare {
+  margin-bottom: 56px;
+}
+
+.conf-prepare__box-wrap {
+  position: relative;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  padding: 28px 32px 32px;
+}
+
+.conf-prepare__tools {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  display: flex;
+  gap: 8px;
+}
+
+.conf-prepare__tool {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  background: #fff;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conf-prepare__tool:hover {
+  border-color: #006aff;
+  color: #006aff;
+}
+
+.conf-prepare__row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid #efefef;
+}
+
+.conf-prepare__row:last-child {
+  border-bottom: none;
+}
+
+.conf-prepare__label {
+  font-size: 15px;
+  font-weight: 900;
+  color: #333;
+}
+
+.conf-prepare__value {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #444;
+}
+
+.conf-prepare__value strong {
+  font-size: 16px;
+  font-weight: 900;
+  color: #111;
+}
+
+.conf-prepare__value p {
+  margin: 0 0 12px;
+}
+
+.conf-prepare__ref {
+  color: #006aff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.conf-prepare__ref:hover {
+  text-decoration: underline;
+}
+
+.conf-past-results {
+  scroll-margin-top: 120px;
+}
+
+.conf-past-results__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.conf-past-results__head span {
+  width: 4px;
+  height: 22px;
+  background: #ffc107;
+}
+
+.conf-past-results__head h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 900;
+  color: #006aff;
+  letter-spacing: -0.03em;
+}
+
+.conf-past-section {
+  margin-bottom: 40px;
+}
+
+.conf-past-section__title {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 900;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+
+.conf-past-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.conf-past-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.conf-past-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 160px;
+  width: 100%;
+  padding: 0;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.conf-past-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border-top: 3px solid #006aff;
+  border-left: 3px solid #006aff;
+  z-index: 1;
+}
+
+.conf-past-card__body {
+  flex: 1;
+  background: #f3f3f3;
+  padding: 20px 16px 16px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.conf-past-card__title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.5;
+  color: #333;
+  letter-spacing: -0.02em;
+}
+
+.conf-past-card__foot {
+  padding: 12px 14px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 700;
+  color: #888;
+  background: #fff;
+}
+
+.conf-past-card:hover .conf-past-card__foot {
+  color: #006aff;
+}
+
+/* 부대행사 결과 상세 모달 */
+.conf-past-detail-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  box-sizing: border-box;
+}
+
+.conf-past-detail-modal.is-open {
+  display: flex;
+}
+
+.conf-past-detail-modal[hidden] {
+  display: none !important;
+}
+
+.conf-past-detail-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.conf-past-detail-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
+  max-height: calc(100vh - 48px);
+  max-height: calc(100dvh - 48px);
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.conf-past-detail-modal__close-x {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: #666;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.conf-past-detail-modal__close-x:hover {
+  color: #111;
+}
+
+.conf-past-detail-modal__header {
+  padding: 28px 48px 20px 24px;
+  background: #f3f3f3;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.conf-past-detail-modal__title {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.45;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+
+.conf-past-detail-modal__meta {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+}
+
+.conf-past-detail-modal__host {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #333;
+}
+
+.conf-past-detail-modal__host-label {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 8px;
+  background: #e8e8e8;
+  font-size: 12px;
+  font-weight: 700;
+  color: #666;
+}
+
+.conf-past-detail-modal__body {
+  padding: 24px 24px 28px;
+  overflow-y: auto;
+}
+
+.conf-past-detail-modal__list {
+  margin: 0 0 24px;
+}
+
+.conf-past-detail-modal__row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 12px 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid #efefef;
+}
+
+.conf-past-detail-modal__row:last-child {
+  border-bottom: none;
+}
+
+.conf-past-detail-modal__row dt {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 800;
+  color: #888;
+}
+
+.conf-past-detail-modal__row dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #222;
+}
+
+.conf-past-detail-modal__close-btn {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 2px;
+  background: #006aff;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.conf-past-detail-modal__close-btn:hover {
+  background: #0056d6;
+}
+
+body.conf-past-detail-open {
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .conf-past-detail-modal__row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .conf-past-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .conf-past-grid--2 {
+    max-width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .conf-prepare__row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .conf-prepare__box-wrap {
+    padding: 48px 16px 20px;
+  }
+
+  .conf-past-grid,
+  .conf-past-grid--2 {
+    grid-template-columns: 1fr;
+  }
+}

@@ -5,6 +5,8 @@
   const mobileNavClose = document.querySelector('.mobile-nav-close');
 
   if (menuToggle && mobileNav && mobileNavOverlay) {
+    const TRANSITION_MS = 300;
+
     function openMenu() {
       mobileNav.classList.add('is-open');
       mobileNavOverlay.hidden = false;
@@ -17,22 +19,70 @@
     function closeMenu() {
       mobileNav.classList.remove('is-open');
       mobileNavOverlay.classList.remove('is-open');
-      mobileNavOverlay.hidden = true;
       mobileNav.setAttribute('aria-hidden', 'true');
       menuToggle.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('menu-open');
+
+      window.setTimeout(function () {
+        if (!mobileNavOverlay.classList.contains('is-open')) {
+          mobileNavOverlay.hidden = true;
+        }
+      }, TRANSITION_MS);
     }
 
-    menuToggle.addEventListener('click', openMenu);
+    function isOpen() {
+      return mobileNav.classList.contains('is-open');
+    }
+
+    menuToggle.addEventListener('click', function () {
+      if (isOpen()) {
+        closeMenu();
+        return;
+      }
+      openMenu();
+    });
     if (mobileNavClose) {
       mobileNavClose.addEventListener('click', closeMenu);
     }
     mobileNavOverlay.addEventListener('click', closeMenu);
 
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 768) {
+    window.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && isOpen()) {
         closeMenu();
       }
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 1024) {
+        closeMenu();
+      }
+    });
+  }
+
+  const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+  if (mobileNavItems.length > 0) {
+    mobileNavItems.forEach(function (item) {
+      item.addEventListener('toggle', function () {
+        if (!item.open) {
+          return;
+        }
+        mobileNavItems.forEach(function (other) {
+          if (other !== item) {
+            other.open = false;
+          }
+        });
+      });
+    });
+  }
+
+  const mobileNavSubs = document.querySelectorAll('.mobile-nav-sub');
+  if (mobileNavSubs.length > 0) {
+    mobileNavSubs.forEach(function (sub) {
+      const links = sub.querySelectorAll('a');
+      links.forEach(function (link, index) {
+        // 메뉴(섹션)별로 0부터 스태거가 시작해야 딜레이가 과도해지지 않음
+        link.style.setProperty('--stagger-index', String(index));
+      });
     });
   }
 

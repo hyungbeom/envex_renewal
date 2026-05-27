@@ -1,0 +1,200 @@
+@import url('./schedule.css');
+@import url('../visitors/application_form.css');
+
+.conf2-form {
+  margin: 0 auto 48px;
+}
+
+.conf2-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.conf2-head__title {
+  margin: 0 0 12px;
+  font-size: 26px;
+  font-weight: 900;
+  color: #006aff;
+  letter-spacing: -0.03em;
+}
+
+.conf2-head__text p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #333;
+}
+
+.conf2-head__hl {
+  color: #006aff;
+  font-weight: 700;
+}
+
+.conf2-import {
+  flex-shrink: 0;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 2px;
+  background: #006aff;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.conf2-import:hover {
+  background: #0056d6;
+}
+
+.conf2-seminar-bar {
+  margin: 0 0 0;
+  padding: 12px 16px;
+  background: #f3f3f3;
+  border: 1px solid #e8e8e8;
+  border-bottom: none;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: #333;
+}
+
+.conf2-seminar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid #e8e8e8;
+  margin-bottom: 28px;
+}
+
+/* vf-form label/input 기본 스타일 덮어쓰기 */
+.conf2-form .conf2-seminar-grid label.conf2-seminar-item {
+  display: flex !important;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  padding: 16px 14px;
+  border-right: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #222;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.conf2-form .conf2-seminar-item:nth-child(4n) {
+  border-right: none;
+}
+
+.conf2-form .conf2-seminar-item input[type='checkbox'] {
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px;
+  margin: 2px 0 0;
+  padding: 0;
+  flex-shrink: 0;
+  accent-color: #006aff;
+  cursor: pointer;
+}
+
+.conf2-form .conf2-seminar-item span {
+  flex: 1;
+  min-width: 0;
+  color: #222 !important;
+  font-weight: 400;
+  text-align: left;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.conf2-basic-lead {
+  margin: 0 0 16px;
+  font-size: 12px;
+  line-height: 1.65;
+  color: #666;
+}
+
+.conf2-consent-block {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e8eef8;
+}
+
+.conf2-consent-block > label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.conf2-consent-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #333;
+}
+
+.conf2-consent-radios {
+  display: flex;
+  gap: 16px;
+}
+
+.conf2-consent-radios label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.conf2-consent-radios input {
+  width: auto;
+  height: auto;
+}
+
+.conf2-form .vf-section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+@media (max-width: 1024px) {
+  .conf2-seminar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .conf2-form .conf2-seminar-item:nth-child(4n) {
+    border-right: 1px solid #efefef;
+  }
+
+  .conf2-form .conf2-seminar-item:nth-child(2n) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .conf2-head {
+    flex-direction: column;
+  }
+
+  .conf2-import {
+    width: 100%;
+  }
+
+  .conf2-seminar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .conf2-form .conf2-seminar-item {
+    border-right: none !important;
+  }
+}

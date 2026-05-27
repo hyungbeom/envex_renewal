@@ -1,0 +1,481 @@
+/*
+ * 서브페이지 공통 상단 (information, exhibition 등)
+ * HTML: .info-page-top > .header-bg + .info-hero + .info-subnav
+ * CSS: information.css + style.css (페이지 전용 css는 @import information.css)
+ * JS: app.js + 페이지별 js (맨 위로: [data-scroll-top])
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: #111;
+}
+
+:root {
+  --content-max-width: 1440px;
+}
+
+/* 서브페이지 본문 컨테이너 (max-width 1440px) */
+.exh-content-inner,
+.loc-content-inner,
+.layout-content-inner,
+.guide-content-inner,
+.app-content-inner,
+.visitor-content-inner,
+.conf-content-inner {
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info-page-top {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to top right, #022f7d 0%, #0355e3 100%);
+}
+
+.info-page-top .header-bg {
+  flex-shrink: 0;
+}
+
+/* 데스크톱: 헤더 배경 없음 (index.html 헤더는 style.css 그대로) */
+@media (min-width: 1025px) {
+  .info-page-top .header-bg {
+    background: none !important;
+    background-color: transparent !important;
+  }
+}
+
+.info-page-top .header-inner > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* ----- 히어로 (데스크톱: 좌 텍스트 / 우 이미지) ----- */
+.info-hero {
+  flex: 0 0 auto;
+  padding-top: 80px;
+}
+
+.info-hero-text {
+  order: 1;
+}
+
+.info-hero-image-wrap {
+  order: 2;
+}
+
+/* ----- 서브 네비 (데스크톱·태블릿: #006AFF 바) ----- */
+.info-page-top .info-subnav {
+  flex: 0 0 auto;
+  margin-top: 120px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: #006aff !important;
+}
+
+.info-subnav-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.info-subnav__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.info-subnav__link.is-active {
+  font-weight: 700;
+  color: #ffc107;
+  border-bottom-color: #ffc107;
+}
+
+.info-subnav__link:hover {
+  color: #fff;
+}
+
+/* 서브메뉴 바로 아래 본문 타이틀까지 간격 */
+@media (min-width: 768px) {
+  .info-page-top + main.exh-content,
+  .info-page-top + .info-details-section {
+    padding-top: 160px !important;
+  }
+}
+
+/* ----- 태블릿 (768px ~ 1024px): 텍스트 → 이미지, 가로 메뉴 ----- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .info-hero {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 40px 24px 0 !important;
+    gap: 28px !important;
+  }
+
+  .info-hero-text {
+    order: 1;
+    padding-top: 0 !important;
+  }
+
+  .info-hero-image-wrap {
+    order: 2;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .info-hero h1 {
+    font-size: clamp(28px, 4vw, 36px) !important;
+    margin-bottom: 20px !important;
+  }
+
+  .info-hero-text > div {
+    font-size: 16px !important;
+    gap: 16px !important;
+  }
+
+  .info-hero-floats {
+    display: none !important;
+  }
+
+  .info-page-top .info-subnav {
+    margin-top: 120px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    background-color: #006aff !important;
+    padding: 0;
+  }
+
+  /* 태블릿: 1행 3칸(좌·가운데·우) + 2행 1칸(좌) */
+  .info-subnav-inner {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    row-gap: 20px;
+    column-gap: 0;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 24px 40px 28px !important;
+    box-sizing: border-box;
+  }
+
+  .info-subnav__link {
+    display: inline-flex !important;
+    align-items: center;
+    width: auto;
+    padding: 0 !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+    border: none !important;
+    border-bottom: none !important;
+    background: transparent !important;
+    white-space: nowrap;
+  }
+
+  .info-subnav__link:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .info-subnav__link:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+  }
+
+  .info-subnav__link:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .info-subnav__link:nth-child(4) {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .info-subnav__link.is-active {
+    color: #fff !important;
+    font-weight: 800 !important;
+  }
+
+  .info-subnav__link:hover {
+    color: #fff !important;
+  }
+}
+
+/* ----- 모바일 (≤767px): 이미지 → 텍스트, 2×2 메뉴 그리드 ----- */
+@media (max-width: 767px) {
+  .info-hero {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .info-hero-image-wrap {
+    order: 1;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .info-hero-image-wrap > div {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .info-hero-text {
+    order: 2;
+    padding: 28px 16px 0 !important;
+  }
+
+  .info-hero h1 {
+    font-size: 26px !important;
+    line-height: 130% !important;
+    margin-bottom: 16px !important;
+  }
+
+  .info-hero-text > div {
+    font-size: 14px !important;
+    line-height: 168% !important;
+    gap: 14px !important;
+  }
+
+  .info-hero-floats {
+    display: none !important;
+  }
+
+  .info-page-top {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow-x: clip;
+  }
+
+  .info-page-top .info-subnav {
+    margin: 0 !important;
+    border-top: none;
+    background: transparent !important;
+    padding: 0 !important;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    box-sizing: border-box;
+  }
+
+  .info-subnav-inner {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+  }
+
+  .info-subnav__link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-width: 0;
+    min-height: 0;
+    padding: 18px 0 !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 140% !important;
+    text-align: center;
+    white-space: normal !important;
+    color: #fff !important;
+    border: none !important;
+    border-right: 1px solid #fff !important;
+    border-bottom: 1px solid #fff !important;
+    border-radius: 0 !important;
+    background: #125bdb !important;
+    box-sizing: border-box;
+  }
+
+  .info-subnav__link:nth-child(2n) {
+    border-right: none !important;
+  }
+
+  .info-subnav__link:nth-child(n + 3) {
+    border-bottom: none !important;
+  }
+
+  .info-subnav__link.is-active {
+    background: #022f7d !important;
+    color: #fff !important;
+    font-weight: 800 !important;
+  }
+}
+
+/* 전시회 개요 상세 */
+.info-details-section {
+  display: block;
+}
+
+.info-sponsor-grid img {
+  display: block;
+}
+
+/* 전시회 개요 상세 — 태블릿 (라벨|내용 2열, 주최 2열, 후원 3열) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .info-details-section {
+    padding: 160px 24px 64px !important;
+  }
+
+  .info-details-box {
+    padding: 40px 32px !important;
+  }
+
+  .info-details-row {
+    grid-template-columns: 72px 1fr !important;
+    column-gap: 28px !important;
+    padding: 24px 0 !important;
+    align-items: start !important;
+  }
+
+  .info-details-row > div:first-child {
+    font-size: 14px !important;
+    padding-top: 2px !important;
+  }
+
+  .info-host-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px 28px !important;
+    max-width: 100% !important;
+  }
+
+  .info-sponsor-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 18px 24px !important;
+  }
+
+  .info-why-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 40px 28px !important;
+  }
+}
+
+/* 전시회 개요 상세 — 모바일 (라벨 위·내용 아래, 로고 2열) */
+@media (max-width: 767px) {
+  .info-details-section {
+    padding: 32px 16px 48px !important;
+  }
+
+  .info-details-box {
+    padding: 8px 0 !important;
+    max-width: 100% !important;
+  }
+
+  .info-details-row {
+    grid-template-columns: 1fr !important;
+    column-gap: 0 !important;
+    row-gap: 8px !important;
+    padding: 20px 0 !important;
+    align-items: start !important;
+  }
+
+  .info-details-row > div:first-child {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: #888 !important;
+    padding-top: 0 !important;
+  }
+
+  .info-details-row > div:last-child {
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    line-height: 150% !important;
+    color: #111 !important;
+  }
+
+  .info-details-row:first-of-type > div:last-child {
+    font-size: 18px !important;
+    line-height: 140% !important;
+  }
+
+  .info-details-row > div:last-child > div:first-child {
+    font-size: inherit !important;
+    font-weight: 800 !important;
+    color: #111 !important;
+  }
+
+  .info-details-row > div:last-child p {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #006aff !important;
+    margin-top: 8px !important;
+  }
+
+  .info-details-row--host > div:first-child,
+  .info-details-row--sponsor > div:first-child {
+    margin-bottom: 4px;
+  }
+
+  .info-host-grid,
+  .info-sponsor-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px 20px !important;
+    max-width: 100% !important;
+  }
+
+  .info-host-grid img {
+    height: 24px !important;
+    justify-self: start !important;
+  }
+
+  .info-sponsor-grid img {
+    height: 20px !important;
+    justify-self: start !important;
+  }
+}
+
+button[data-scroll-top]:hover {
+  filter: brightness(1.12);
+}
+
+button[data-scroll-top]:focus-visible {
+  outline: 2px solid #ffc107;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .info-why-section {
+    padding: 56px 16px 72px !important;
+  }
+
+  .info-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+
+}

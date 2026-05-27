@@ -1,0 +1,538 @@
+/* 전시 품목 페이지 — 헤더·서브네비는 information.css, 히어로 배너는 전용 */
+@import url('information.css');
+
+/*
+ * 데스크톱: 헤더를 히어로 이미지 위에 겹침
+ * (투명만으로는 .info-page-top 그라데이션이 보여 파란 띠처럼 보임)
+ */
+@media (min-width: 1025px) {
+  .info-page-top--exh {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    background: none !important;
+  }
+
+  .info-page-top--exh .header-bg,
+  .info-page-top--exh .exh-hero {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .info-page-top--exh .exh-hero {
+    z-index: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .info-page-top--exh .header-bg {
+    z-index: 2;
+    align-self: start;
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .info-page-top--exh .header-inner {
+    background: transparent !important;
+  }
+
+  .info-page-top--exh .info-subnav {
+    grid-row: 2;
+    grid-column: 1;
+    z-index: 2;
+    margin-top: 0 !important;
+  }
+}
+
+/* ----- 히어로 배너 (exhibition.background.jpg) ----- */
+.exh-hero {
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 24px 64px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.exh-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  isolation: isolate;
+  background-color: #022f7d;
+}
+
+/* 사진(하단) + 그라데이션(상단 96%) */
+.exh-hero__bg img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.exh-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top right, #022f7d 0%, #0355e3 100%);
+  opacity: 0.94;
+  pointer-events: none;
+}
+
+.exh-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.exh-hero__inner h1 {
+  margin: 0 0 16px;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+}
+
+.exh-hero__inner p {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 168%;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+/* ----- 본문: 전시 품목 ----- */
+.exh-content {
+  background: #fff;
+  padding: 64px 24px 96px;
+}
+
+.exh-section-title {
+  margin: 0 0 12px;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+  color: #111;
+  text-align: center;
+}
+
+.exh-section-desc {
+  margin: 0 0 48px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 168%;
+  letter-spacing: -0.02em;
+  color: #555;
+  text-align: center;
+}
+
+.exh-env-field {
+  margin-bottom: 0;
+}
+
+.exh-block {
+  margin-bottom: 64px;
+}
+
+.exh-co-block {
+  margin-bottom: 0;
+}
+
+.exh-block:last-child {
+  margin-bottom: 0;
+}
+
+.exh-section-divider {
+  display: block;
+  height: 0;
+  margin: 140px 0;
+  padding: 0;
+  border: none;
+  border-top: 2px solid #006aff;
+  background: none;
+}
+
+.exh-section-head__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 32px;
+  padding: 0;
+  border: none;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+  color: #006aff;
+}
+
+.exh-section-head__bar {
+  flex-shrink: 0;
+  width: 4px;
+  height: 24px;
+  background: #ffc107;
+  border-radius: 1px;
+}
+
+.exh-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px 20px;
+}
+
+.exh-card {
+  margin: 0;
+  text-align: center;
+}
+
+.exh-card__thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #e8e8e8;
+  margin-bottom: 12px;
+}
+
+.exh-card__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.exh-card__body {
+  min-width: 0;
+}
+
+.exh-card__title,
+.exh-card__label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: #222;
+}
+
+.exh-card__desc {
+  display: none;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 168%;
+  letter-spacing: -0.02em;
+  color: #444;
+}
+
+/* ----- 환경산업기술 분야: 데스크톱 이미지 ----- */
+.exh-desk-visual {
+  display: none;
+  margin: 0;
+}
+
+.exh-field-hero {
+  display: none;
+  margin: 0 auto 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.exh-field-hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.exh-env-field {
+  position: relative;
+}
+
+@media (min-width: 1025px) {
+  .exh-section-title--mobile,
+  .exh-section-desc--mobile {
+    display: none;
+  }
+
+  .exh-section-head__title {
+    margin-bottom: 60px;
+    font-size: 28px;
+  }
+
+  .exh-section-head__bar {
+    height: 28px;
+  }
+
+  .exh-grid--stack,
+  .exh-co-block .exh-grid--co-mobile {
+    display: none !important;
+  }
+
+  .exh-desk-visual {
+    display: block;
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .exh-desk-visual img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .exh-section-title--mobile,
+  .exh-section-desc--mobile {
+    display: none;
+  }
+
+  .exh-hero {
+    min-height: 280px;
+    padding: 48px 24px 56px;
+  }
+
+  .exh-hero__inner h1 {
+    font-size: clamp(28px, 4vw, 36px);
+  }
+
+  .exh-hero__inner p {
+    font-size: 16px;
+  }
+
+  .exh-content {
+    padding: 160px 24px 72px;
+  }
+
+  .exh-section-head__title {
+    margin-bottom: 60px;
+    font-size: 26px;
+  }
+
+  .exh-section-head__bar {
+    height: 26px;
+  }
+
+  .exh-section-divider {
+    margin: 80px 0;
+  }
+
+  /* 환경산업기술·탄소중립: 중앙 원형 + 2열 상세 목록 */
+  .exh-env-field .exh-desk-visual,
+  .exh-co-block .exh-desk-visual {
+    display: none !important;
+  }
+
+  .exh-field-hero {
+    display: block;
+    width: clamp(220px, 34vw, 300px);
+    height: clamp(220px, 34vw, 300px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .exh-env-field .exh-grid--stack,
+  .exh-co-block .exh-grid--co-mobile {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px 32px;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+  }
+
+  /* DOM은 모바일 순서, 태블릿은 2열 배치용 order */
+  .exh-env-field .exh-card:nth-child(1) { order: 1; }
+  .exh-env-field .exh-card:nth-child(2) { order: 3; }
+  .exh-env-field .exh-card:nth-child(3) { order: 5; }
+  .exh-env-field .exh-card:nth-child(4) { order: 7; }
+  .exh-env-field .exh-card:nth-child(5) { order: 9; }
+  .exh-env-field .exh-card:nth-child(6) { order: 2; }
+  .exh-env-field .exh-card:nth-child(7) { order: 4; }
+  .exh-env-field .exh-card:nth-child(8) { order: 6; }
+  .exh-env-field .exh-card:nth-child(9) { order: 8; }
+
+  .exh-co-block .exh-card:nth-child(1) { order: 1; }
+  .exh-co-block .exh-card:nth-child(2) { order: 3; }
+  .exh-co-block .exh-card:nth-child(3) { order: 5; }
+  .exh-co-block .exh-card:nth-child(4) { order: 7; }
+  .exh-co-block .exh-card:nth-child(5) { order: 2; }
+  .exh-co-block .exh-card:nth-child(6) { order: 4; }
+  .exh-co-block .exh-card:nth-child(7) { order: 6; }
+  .exh-co-block .exh-card:nth-child(8) { order: 8; }
+
+  .exh-env-field .exh-card,
+  .exh-co-block .exh-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .exh-env-field .exh-card__thumb,
+  .exh-co-block .exh-card__thumb {
+    flex: 0 0 72px;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 0;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .exh-env-field .exh-card__title,
+  .exh-co-block .exh-card__title {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 140%;
+    color: #006aff;
+  }
+
+  .exh-env-field .exh-card__desc,
+  .exh-co-block .exh-card__desc {
+    display: block;
+    font-size: 13px;
+    line-height: 168%;
+    color: #333;
+  }
+}
+
+@media (max-width: 767px) {
+  .exh-section-title--mobile,
+  .exh-section-desc--mobile {
+    display: none;
+  }
+
+  .exh-env-field .exh-desk-visual,
+  .exh-co-block .exh-desk-visual {
+    display: none !important;
+  }
+
+  .exh-field-hero {
+    display: block !important;
+    width: clamp(200px, 58vw, 280px);
+    height: clamp(200px, 58vw, 280px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+
+  .exh-section-head__title {
+    margin-bottom: 60px;
+    font-size: 20px;
+  }
+
+  .exh-section-head__bar {
+    width: 3px;
+    height: 20px;
+  }
+
+  .exh-hero {
+    min-height: 240px;
+    padding: 40px 16px 0;
+  }
+
+  .info-page-top--exh .info-subnav {
+    margin-top: 0 !important;
+  }
+
+  .exh-hero__inner h1 {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .exh-hero__inner p {
+    font-size: 14px;
+  }
+
+  .exh-content {
+    padding: 40px 16px 64px;
+  }
+
+  .exh-section-title {
+    font-size: 26px;
+  }
+
+  .exh-section-desc {
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+
+  .exh-env-field .exh-grid--stack,
+  .exh-co-block .exh-grid--co-mobile {
+    display: flex !important;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .exh-env-field .exh-card,
+  .exh-co-block .exh-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+    text-align: left;
+  }
+
+  .exh-env-field .exh-card__thumb,
+  .exh-co-block .exh-card__thumb {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .exh-env-field .exh-card__body,
+  .exh-co-block .exh-card__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .exh-env-field .exh-card__title,
+  .exh-co-block .exh-card__title {
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 140%;
+    text-align: left;
+    color: #006aff;
+  }
+
+  .exh-env-field .exh-card__desc,
+  .exh-co-block .exh-card__desc {
+    display: block;
+    font-size: 12px;
+    line-height: 168%;
+    color: #333;
+  }
+
+  .exh-section-divider {
+    margin: 56px 0;
+  }
+}

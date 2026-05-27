@@ -1,0 +1,199 @@
+@import url('./guide.css');
+
+/* ----- 참가 가이드(규정/약관) 문서 ----- */
+.reg-content {
+  background: #fff;
+  padding: 64px 24px 96px;
+}
+
+.reg-content-inner {
+  position: relative;
+}
+
+.app-floats {
+  position: fixed;
+  right: max(16px, calc((100vw - var(--content-max-width)) / 2 + 16px));
+  top: 200px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.app-floats > * {
+  pointer-events: auto;
+}
+
+.app-floats__top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.app-floats__top:hover {
+  filter: brightness(1.12);
+}
+
+.reg-terms-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.reg-doc-title {
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+  color: #006aff;
+  outline: none;
+}
+
+.reg-terms {
+  padding: 28px 28px;
+  border: 1px solid #b8d4f5;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.reg-terms.app-terms {
+  max-height: none;
+  margin-bottom: 40px;
+  overflow: visible;
+}
+
+.reg-terms .app-terms__heading {
+  margin: 16px 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+}
+
+.reg-terms .app-terms__heading:first-child {
+  margin-top: 0;
+}
+
+.reg-terms .app-terms__para {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: #333;
+  line-height: 168%;
+}
+
+.reg-terms .app-terms__note {
+  margin: 0 0 16px;
+  font-size: 12px;
+  line-height: 160%;
+  color: #555;
+}
+
+.reg-terms .app-terms__list {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  font-size: 13px;
+  line-height: 168%;
+  color: #333;
+}
+
+.reg-terms .app-terms__list li {
+  margin-bottom: 4px;
+}
+
+.reg-terms .app-terms__list--continue {
+  margin-top: 0;
+}
+
+.reg-terms .app-terms__sublist {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  list-style: disc;
+}
+
+.reg-terms .app-terms__sublist li {
+  margin-bottom: 4px;
+}
+
+.reg-terms .app-terms-table {
+  width: 100%;
+  margin: 12px 0 16px;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: center;
+}
+
+.reg-terms .app-terms-table th,
+.reg-terms .app-terms-table td {
+  padding: 10px 8px;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.reg-terms .app-terms-table thead th {
+  background: #f5f5f5;
+  font-weight: 700;
+  color: #222;
+}
+
+.reg-terms .app-terms-table--wide {
+  font-size: 12px;
+}
+
+.reg-terms .app-terms-table--wide th,
+.reg-terms .app-terms-table--wide td {
+  padding: 8px 6px;
+}
+
+.reg-download-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.reg-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 2px;
+  background: #006aff;
+  color: #fff;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+}
+
+.reg-download-btn:hover {
+  background: #0056d6;
+}
+
+@media (max-width: 767px) {
+  .reg-content {
+    padding: 40px 16px 64px;
+  }
+
+  .reg-terms-wrap {
+    max-width: none;
+  }
+
+  .reg-terms {
+    padding: 18px 16px;
+  }
+
+  .reg-download-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,982 @@
+/* 찾아오시는 길 — 헤더·서브네비는 information.css */
+@import url('information.css');
+
+@media (min-width: 1025px) {
+  .info-page-top--exh {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    background: none !important;
+  }
+
+  .info-page-top--exh .header-bg,
+  .info-page-top--exh .exh-hero {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .info-page-top--exh .exh-hero {
+    z-index: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .info-page-top--exh .header-bg {
+    z-index: 2;
+    align-self: start;
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .info-page-top--exh .header-inner {
+    background: transparent !important;
+  }
+
+  .info-page-top--exh .info-subnav {
+    grid-row: 2;
+    grid-column: 1;
+    z-index: 2;
+    margin-top: 0 !important;
+  }
+}
+
+.exh-hero {
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 24px 64px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.exh-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  isolation: isolate;
+  background-color: #022f7d;
+}
+
+.exh-hero__bg img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.exh-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top right, #022f7d 0%, #0355e3 100%);
+  opacity: 0.94;
+  pointer-events: none;
+}
+
+.exh-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.exh-hero__inner h1 {
+  margin: 0 0 16px;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+}
+
+.exh-hero__inner p {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 168%;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+/* ----- 본문 ----- */
+.loc-content {
+  background: #fff;
+  padding: 64px 24px 96px;
+}
+
+.loc-section {
+  margin-bottom: 72px;
+}
+
+.loc-section:last-child {
+  margin-bottom: 0;
+}
+
+.loc-section-head {
+  margin-bottom: 28px;
+}
+
+.loc-section-head--compact {
+  margin-bottom: 24px;
+}
+
+.loc-section-head__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 16px;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+  color: #006aff;
+}
+
+.loc-section-head--compact .loc-section-head__title {
+  margin-bottom: 0;
+}
+
+.loc-section-head__bar {
+  flex-shrink: 0;
+  width: 4px;
+  height: 28px;
+  background: #ffc107;
+  border-radius: 1px;
+}
+
+.loc-section-head__lead {
+  margin: 0;
+  max-width: 720px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 168%;
+  letter-spacing: -0.02em;
+  color: #555;
+}
+
+.loc-section-head__desc p {
+  margin: 0 0 8px;
+  max-width: 720px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 168%;
+  letter-spacing: -0.02em;
+  color: #555;
+}
+
+.loc-section-head__desc p:last-child {
+  margin-bottom: 0;
+}
+
+.loc-section-head__row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px 32px;
+}
+
+.loc-section-head__row .loc-section-head__desc {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.loc-section-head__row .loc-print {
+  flex-shrink: 0;
+  margin-bottom: 2px;
+}
+
+.loc-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px 32px;
+  margin-bottom: 24px;
+}
+
+.loc-toolbar .loc-print {
+  margin-bottom: 2px;
+}
+
+.loc-address {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 168%;
+  letter-spacing: -0.02em;
+  color: #222;
+}
+
+.loc-print__icon {
+  display: block;
+  width: 19px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+.loc-print {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 2px;
+  background: #006aff;
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.loc-print:hover {
+  background: #0056d6;
+}
+
+.loc-map {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ddd;
+  background: #f8f8f8;
+  box-sizing: border-box;
+}
+
+.loc-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.loc-map-panel {
+  margin-top: 0;
+}
+
+.loc-map-viewport {
+  overflow: visible;
+  background: transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.loc-map-stage {
+  transform-origin: 0 0;
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
+.loc-map-stage img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.loc-print--panel {
+  display: none;
+}
+
+.loc-zoom {
+  display: none;
+  align-items: stretch;
+  justify-content: center;
+  margin: 12px auto 0;
+  max-width: 220px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.loc-zoom__btn {
+  flex: 0 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0;
+  border: none;
+  background: #fff;
+  color: #222;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.loc-zoom__btn[data-zoom="out"] {
+  border-right: 1px solid #ccc;
+}
+
+.loc-zoom__btn[data-zoom="in"] {
+  border-left: 1px solid #ccc;
+}
+
+.loc-zoom__label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #222;
+}
+
+.loc-section--traffic .loc-address {
+  margin: 0 0 20px;
+}
+
+.loc-section--traffic .loc-toolbar--desk {
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.loc-section--parking .loc-toolbar--desk {
+  justify-content: flex-start;
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+/* 버스 */
+.loc-bus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.loc-bus {
+  display: flex;
+  min-height: 120px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.loc-bus__label {
+  flex: 0 0 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 12px;
+  color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.loc-bus--blue .loc-bus__label {
+  background: #006aff;
+}
+
+.loc-bus--green .loc-bus__label {
+  background: #5cb82a;
+}
+
+.loc-bus__icon {
+  display: block;
+  width: 32px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.loc-bus__label span {
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+}
+
+.loc-bus__nums {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  padding: 20px 16px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.loc-bus__nums ul {
+  margin: 0;
+  padding: 0 8px;
+  list-style: none;
+}
+
+.loc-bus__nums li {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: #333;
+}
+
+.loc-bus__nums li:last-child {
+  margin-bottom: 0;
+}
+
+/* 지하철 */
+.loc-subway-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.loc-subway {
+  display: flex;
+  align-items: stretch;
+  min-height: 140px;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.loc-subway__badge {
+  flex: 0 0 132px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 10px;
+  color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.loc-subway__icon {
+  display: block;
+  width: 36px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.loc-subway__badge span {
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+}
+
+.loc-subway__badge--line2 {
+  background: #3cb44a;
+}
+
+.loc-subway__badge--line9 {
+  background: #9a8b6f;
+}
+
+.loc-subway__badge--line7 {
+  background: #6d7b2c;
+}
+
+.loc-subway__body {
+  flex: 1;
+  min-width: 0;
+  padding: 22px 24px;
+  border-left: 1px solid #e8e8e8;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.loc-subway__body p {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 168%;
+  letter-spacing: -0.02em;
+  color: #333;
+}
+
+.loc-subway__body p:last-child {
+  margin-bottom: 0;
+}
+
+/* 플로팅 */
+.loc-floats {
+  position: fixed;
+  right: max(16px, calc((100vw - var(--content-max-width)) / 2 + 16px));
+  top: 200px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.loc-floats > * {
+  pointer-events: auto;
+}
+
+.loc-floats__online {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 112px;
+  padding: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: #006aff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.loc-floats__top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.loc-floats__top:hover,
+button[data-scroll-top]:hover {
+  filter: brightness(1.12);
+}
+
+@media (min-width: 768px) {
+  .info-page-top + main.loc-content {
+    padding-top: 160px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .exh-hero {
+    min-height: 280px;
+    padding: 48px 24px 56px;
+  }
+
+  .exh-hero__inner h1 {
+    font-size: clamp(28px, 4vw, 36px);
+  }
+
+  .exh-hero__inner p {
+    font-size: 16px;
+  }
+
+  .loc-content {
+    padding: 160px 24px 72px;
+  }
+
+  .loc-section-head__title {
+    font-size: 26px;
+  }
+
+  .loc-floats {
+    right: 20px;
+    top: 180px;
+  }
+
+  .loc-floats__online {
+    width: 96px;
+    height: 96px;
+    font-size: 12px;
+  }
+
+  /* 버스: 세로 2행, 좌측 색상 블록 + 우측 노선 */
+  .loc-bus-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    border: 1px solid #e8e8e8;
+  }
+
+  .loc-bus {
+    min-height: 110px;
+    border: none;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .loc-bus:last-child {
+    border-bottom: none;
+  }
+
+  .loc-bus__label {
+    flex: 0 0 30%;
+    max-width: 220px;
+    min-width: 150px;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px 16px;
+  }
+
+  .loc-bus__nums {
+    padding: 22px 20px;
+  }
+
+  /* 지하철: 세로 3행, 좌측 색상 블록 + 우측 안내 */
+  .loc-subway-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1px solid #e8e8e8;
+  }
+
+  .loc-subway {
+    min-height: 120px;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .loc-subway:last-child {
+    border-bottom: none;
+  }
+
+  .loc-subway__badge {
+    flex: 0 0 30%;
+    max-width: 220px;
+    min-width: 150px;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px 16px;
+  }
+
+  .loc-subway__body {
+    padding: 22px 24px;
+    border-left: 1px solid #e8e8e8;
+  }
+
+  /* 주차장: 제목 + 본문 세로, 출력 버튼 하단 좌측 */
+  .loc-section--parking .loc-section-head__title {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .loc-section--parking .loc-section-head__bar {
+    display: block;
+    width: 48px;
+    height: 4px;
+    margin: 0 0 14px;
+  }
+
+  .loc-section--parking .loc-section-head__desc {
+    max-width: none;
+  }
+
+  .loc-section--parking .loc-section-head__desc p {
+    font-size: 15px;
+    line-height: 168%;
+    color: #444;
+  }
+
+  .loc-section--parking .loc-toolbar--desk {
+    margin-top: 20px;
+    margin-bottom: 24px;
+  }
+
+  .loc-section--parking .loc-map {
+    margin-top: 8px;
+  }
+}
+
+/* 데스크톱: 버스·지하철 2열 카드 (1025px+) */
+@media (min-width: 1025px) {
+  .loc-bus-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    border: none;
+  }
+
+  .loc-bus {
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .loc-subway-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    border-top: none;
+  }
+
+  .loc-subway {
+    border: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .exh-hero {
+    min-height: 240px;
+    padding: 40px 16px 0;
+  }
+
+  .info-page-top--exh .info-subnav {
+    margin-top: 0 !important;
+  }
+
+  .exh-hero__inner h1 {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .exh-hero__inner p {
+    font-size: 14px;
+  }
+
+  .loc-content {
+    padding: 40px 16px 64px;
+  }
+
+  .loc-section {
+    margin-bottom: 56px;
+  }
+
+  .loc-section-head {
+    margin-bottom: 20px;
+  }
+
+  .loc-section-head__title {
+    font-size: 22px;
+    gap: 10px;
+  }
+
+  .loc-section-head__bar {
+    width: 4px;
+    height: 22px;
+  }
+
+  .loc-section-head__lead {
+    font-size: 14px;
+  }
+
+  /* 교통·주차: 데스크톱 툴바 숨김, 패널 출력·줌 */
+  .loc-toolbar--desk {
+    display: none !important;
+  }
+
+  .loc-section--traffic .loc-address {
+    display: none;
+  }
+
+  .loc-map-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .loc-print--panel {
+    display: flex;
+    width: 100%;
+    min-height: 52px;
+    margin-bottom: 16px;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .loc-map {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  .loc-map-viewport {
+    overflow: auto;
+    border: 1px solid #ddd;
+    background: #f8f8f8;
+  }
+
+  .loc-zoom {
+    display: flex;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 12px;
+  }
+
+  /* 주차장: 가로 노란 바 + 세로 본문 */
+  .loc-section--parking .loc-section-head__title {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .loc-section--parking .loc-section-head__bar {
+    display: block;
+    width: 40px;
+    height: 4px;
+    margin: 0 0 12px;
+  }
+
+  .loc-section--parking .loc-section-head__desc p {
+    font-size: 14px;
+    line-height: 168%;
+    color: #333;
+  }
+
+  /* 버스: 카드형 — 색 헤더 + 2열 노선 */
+  .loc-bus-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    border: none;
+  }
+
+  .loc-bus {
+    flex-direction: column;
+    min-height: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 0;
+  }
+
+  .loc-bus__label {
+    flex: none;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    text-align: left;
+  }
+
+  .loc-bus__icon {
+    width: 28px;
+  }
+
+  .loc-bus__label span {
+    font-size: 15px;
+  }
+
+  .loc-bus__nums {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px 12px;
+    padding: 16px;
+    border-top: 1px solid #e8e8e8;
+  }
+
+  .loc-bus__nums ul {
+    display: contents;
+    padding: 0;
+  }
+
+  .loc-bus__nums li {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  /* 지하철: 카드형 세로 스택 */
+  .loc-subway-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    border-top: none;
+  }
+
+  .loc-subway {
+    flex-direction: column;
+    min-height: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 0;
+  }
+
+  .loc-subway__badge {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    text-align: left;
+  }
+
+  .loc-subway__icon {
+    width: 30px;
+  }
+
+  .loc-subway__badge span {
+    font-size: 15px;
+  }
+
+  .loc-subway__body {
+    padding: 16px;
+    border-left: none;
+    border-top: 1px solid #e8e8e8;
+  }
+
+  .loc-subway__body p {
+    font-size: 14px;
+  }
+
+  .loc-floats {
+    right: 12px;
+    top: auto;
+    bottom: 24px;
+  }
+
+  .loc-floats__online {
+    width: 80px;
+    height: 80px;
+    font-size: 11px;
+  }
+
+  .loc-floats__top {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (min-width: 768px) {
+  .loc-print--panel,
+  .loc-zoom {
+    display: none !important;
+  }
+
+  .loc-map-stage {
+    transform: none !important;
+    margin: 0 !important;
+  }
+}
+
+@media print {
+  .info-page-top,
+  .loc-floats,
+  .footer-section,
+  .loc-print,
+  .loc-zoom,
+  .mobile-nav,
+  .mobile-nav-overlay {
+    display: none !important;
+  }
+
+  .loc-content {
+    padding: 0 !important;
+  }
+
+  .loc-map {
+    border: none;
+    page-break-inside: avoid;
+  }
+}
