@@ -1,14 +1,6 @@
 (function () {
   'use strict';
-
-  var scrollBtn = document.querySelector('[data-scroll-top]');
-  if (scrollBtn) {
-    scrollBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  function loadSavedData() {
+function loadSavedData() {
     try {
       var raw = window.localStorage.getItem('envex_visitor_application');
       if (!raw) return null;

@@ -1,0 +1,453 @@
+@import url('information.css');
+
+/* exh-hero — layout.css / notice.css 와 동일 구조 */
+.exh-hero {
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 24px 64px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.exh-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  isolation: isolate;
+  background-color: #022f7d;
+}
+
+.exh-hero__bg img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.exh-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top right, #022f7d 0%, #0355e3 100%);
+  opacity: 0.94;
+  pointer-events: none;
+}
+
+.exh-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.exh-hero__inner h1 {
+  margin: 0 0 16px;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+}
+
+.exh-hero__inner p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.68;
+  opacity: 0.92;
+}
+
+/* 서브메뉴 없는 단독 히어로: 하단 여백 조정 */
+@media (min-width: 1025px) {
+  .info-page-top--solo.info-page-top--exh .exh-hero {
+    padding-bottom: 64px;
+  }
+}
+
+/* ==========================================================================
+   본문
+   ========================================================================== */
+.private-policy {
+  position: relative;
+  z-index: 1;
+  padding: 56px 0 100px;
+  background: #fff;
+  color: #222;
+}
+
+.private-policy-inner {
+  position: relative;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.private-policy-head {
+  margin-bottom: 48px;
+}
+
+.private-policy-head .content-title-wrap {
+  margin-bottom: 24px;
+  padding-top: 24px;
+}
+
+.private-policy-head__title {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  color: #111;
+}
+
+.private-policy-lead {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #444;
+  word-break: keep-all;
+}
+
+.private-policy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0355e3;
+  text-decoration: none;
+}
+
+.private-policy-link:hover {
+  text-decoration: underline;
+}
+
+.private-policy-table--purpose {
+  min-width: 720px;
+}
+
+.private-policy-table--purpose th,
+.private-policy-table--purpose td {
+  font-size: 13px;
+}
+
+.private-policy-table--entrust {
+  min-width: 480px;
+}
+
+.private-policy-section {
+  margin-bottom: 40px;
+}
+
+.private-policy-section h2 {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #0355e3;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+.private-policy-section h2::before {
+  content: '';
+  flex-shrink: 0;
+  width: 4px;
+  margin-top: 0.2em;
+  margin-bottom: 0.1em;
+  border-radius: 1px;
+  background: #ffc107;
+}
+
+.private-policy-na {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #444;
+}
+
+.private-policy-ol {
+  margin: 0 0 20px;
+  padding-left: 1.35em;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #444;
+  word-break: keep-all;
+}
+
+.private-policy-ol > li + li {
+  margin-top: 12px;
+}
+
+.private-policy-ol > li > .private-policy-markers,
+.private-policy-ol > li > .private-policy-contact-box {
+  margin-top: 12px;
+}
+
+.private-policy-markers {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #444;
+}
+
+.private-policy-markers > li + li {
+  margin-top: 6px;
+}
+
+.private-policy-table--cookie th[scope='row'] {
+  width: 120px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.private-policy-table--revision {
+  min-width: 280px;
+  max-width: 400px;
+}
+
+.private-policy-table--revision th {
+  width: 120px;
+}
+
+.private-policy-table-caption {
+  margin: 20px 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+}
+
+.private-policy-table--officer {
+  min-width: 640px;
+}
+
+.private-policy-table--officer th[scope='row'] {
+  width: 140px;
+  white-space: nowrap;
+}
+
+.private-policy-ol--continue {
+  margin-top: 20px;
+}
+
+.private-policy-forms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.private-policy-form-btn {
+  flex: 1 1 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 14px 16px;
+  border: 1px solid #d9dde5;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+  word-break: keep-all;
+  box-sizing: border-box;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.private-policy-form-btn:hover {
+  border-color: #0355e3;
+  background: #f7f9fc;
+  color: #0355e3;
+}
+
+.private-policy-history {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.private-policy-history__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e8eaef;
+}
+
+.private-policy-history__item:first-child {
+  padding-top: 4px;
+}
+
+.private-policy-history__period {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  word-break: keep-all;
+}
+
+.private-policy-history__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.private-policy-history__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 16px;
+  border: 1px solid #222;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+  text-decoration: none;
+  white-space: nowrap;
+  box-sizing: border-box;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.private-policy-history__btn:hover {
+  border-color: #0355e3;
+  color: #0355e3;
+}
+
+@media (max-width: 767px) {
+  .private-policy-history__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .private-policy-history__actions {
+    width: 100%;
+  }
+
+  .private-policy-history__btn {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+.private-policy-section p {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #444;
+  word-break: keep-all;
+}
+
+.private-policy-section ul,
+.private-policy-section ol {
+  margin: 0 0 16px;
+  padding-left: 1.25em;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #444;
+}
+
+.private-policy-section li + li {
+  margin-top: 6px;
+}
+
+.private-policy-table-wrap {
+  overflow-x: auto;
+  margin: 16px 0 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.private-policy-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.private-policy-table th,
+.private-policy-table td {
+  border: 1px solid #d9dde5;
+  padding: 12px 14px;
+  vertical-align: middle;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.private-policy-table thead th {
+  background: #f3f5f8;
+  font-weight: 700;
+  color: #222;
+}
+
+.private-policy-table tbody th {
+  background: #fafbfc;
+  font-weight: 600;
+}
+
+.private-policy-table td.is-left {
+  text-align: left;
+}
+
+.private-policy-contact-box {
+  margin-top: 12px;
+  padding: 20px 24px;
+  background: #f7f9fc;
+  border: 1px solid #e8eaef;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.private-policy-contact-box p {
+  margin: 0 0 6px;
+}
+
+.private-policy-contact-box p:last-child {
+  margin-bottom: 0;
+}
+
+.private-policy-revision {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #e8eaef;
+  font-size: 14px;
+  color: #666;
+}
+
+@media (max-width: 767px) {
+  .private-policy {
+    padding: 40px 0 72px;
+  }
+
+  .private-policy-section h2 {
+    font-size: 18px;
+  }
+
+  .private-policy-head {
+    margin-bottom: 36px;
+  }
+}

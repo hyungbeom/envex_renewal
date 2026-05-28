@@ -2,15 +2,7 @@
   'use strict';
 
   var VAT_RATE = 0.1;
-
-  var scrollBtn = document.querySelector('[data-scroll-top]');
-  if (scrollBtn) {
-    scrollBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  function formatNumber(num) {
+function formatNumber(num) {
     return String(Math.round(num)).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 

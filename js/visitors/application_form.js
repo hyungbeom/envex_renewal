@@ -1,14 +1,6 @@
 (function () {
   'use strict';
-
-  var scrollBtn = document.querySelector('[data-scroll-top]');
-  if (scrollBtn) {
-    scrollBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  var prevBtn = document.querySelector('[data-vf-prev]');
+var prevBtn = document.querySelector('[data-vf-prev]');
   if (prevBtn) {
     prevBtn.addEventListener('click', function () {
       window.location.href = 'application_verify.html';

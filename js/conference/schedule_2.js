@@ -34,15 +34,7 @@
   }
 
   renderSeminars();
-
-  var scrollBtn = document.querySelector('[data-scroll-top]');
-  if (scrollBtn) {
-    scrollBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  var importBtn = document.querySelector('[data-conf2-import]');
+var importBtn = document.querySelector('[data-conf2-import]');
   if (importBtn) {
     importBtn.addEventListener('click', function () {
       alert('사전 참관등록 정보 불러오기 기능은 준비 중입니다.');

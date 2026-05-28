@@ -465,15 +465,7 @@
   state.year = getYearFromUrl();
 
   renderAll();
-
-  var scrollBtn = document.querySelector('[data-scroll-top]');
-  if (scrollBtn) {
-    scrollBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  var downloadBtn = document.querySelector('[data-report-download]');
+var downloadBtn = document.querySelector('[data-report-download]');
   if (downloadBtn) {
     downloadBtn.addEventListener('click', function (e) {
       if (downloadBtn.getAttribute('href') === '#') {

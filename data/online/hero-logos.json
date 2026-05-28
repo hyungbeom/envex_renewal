@@ -1,0 +1,60 @@
+{
+  "baseUrl": "https://envex.or.kr/board/upload_file/ENVEX_form2/",
+  "rows": [
+    {
+      "direction": "left",
+      "logos": [
+        { "file": "%EB%B9%84%EB%94%94%ED%85%8D_1.png", "alt": "비디텍" },
+        { "file": "AUCOTEC_LOGO_300dpi[2].png", "alt": "AUCOTEC" },
+        { "file": "ABB_Logo_JPG_RGB_33px_red.jpg", "alt": "ABB" },
+        { "file": "CUPC_CI_KOR2.png", "alt": "CUPC" },
+        { "file": "Esmil%20Group_logo.jpg", "alt": "Esmil Group" },
+        { "file": "Picture14.png", "alt": "" },
+        { "file": "%ED%95%9C%EA%B5%AD%EC%A0%84%EC%95%84%EC%A3%BC%EC%8B%9D%ED%9A%8C%EC%82%AC%20CI.png", "alt": "한국전압주식회사" },
+        { "file": "IGL%20logo[2].png", "alt": "IGL" },
+        { "file": "%ED%9A%8C%EC%82%AC%EB%A1%9C%EA%B3%A0[3].png", "alt": "" },
+        { "file": "%EB%B8%94%EB%A3%A8%EC%9C%88.png", "alt": "블루윈" },
+        { "file": "%EC%97%90%EC%96%B4%EB%A0%88%EC%9D%B8_%EC%98%81%EB%AC%B8%EB%A1%9C%EA%B3%A0_1.jpg", "alt": "에어레인" },
+        { "file": "SAVIO_LOGO.jpg", "alt": "SAVIO" },
+        { "file": "AERZEN_Claim_CMYK_CS5.jpg", "alt": "AERZEN" }
+      ]
+    },
+    {
+      "direction": "right",
+      "logos": [
+        { "file": "Daehan%20E&C%20logo.jpg", "alt": "Daehan E&C" },
+        { "file": "Ecopolplast_logo_color.jpg", "alt": "Ecopolplast" },
+        { "file": "%ED%9A%8C%EC%82%AC%EB%A1%9C%EA%B3%A0[32].jpg", "alt": "" },
+        { "file": "%EB%A1%9C%EA%B3%A0[8].jpg", "alt": "" },
+        { "file": "Signature_Basic.jpg", "alt": "Signature" },
+        { "file": "%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90%20%EB%A1%9C%EA%B3%A0.png", "alt": "서울대학교" },
+        { "file": "duonenergy1.png", "alt": "Duon Energy" },
+        { "file": "Analytik_Jena_Logo_white_background.jpg", "alt": "Analytik Jena" },
+        { "file": "Logo%20WES%20Trade%20(PNG).png", "alt": "WES Trade" },
+        { "file": "Ecosteryl.jpg", "alt": "Ecosteryl" },
+        { "file": "ff0c2333d7fe014361c9724a15c2966d.png", "alt": "" },
+        { "file": "%EB%8F%99%EC%96%91%EC%82%AC%EB%8B%A8%20%EA%B8%80%EC%94%A8%EC%97%86%EC%9D%8C.png", "alt": "" },
+        { "file": "NAUMADE_Logo_4-line_160315.png", "alt": "NAUMADE" }
+      ]
+    },
+    {
+      "direction": "left",
+      "logos": [
+        { "file": "GroeneveldBeka%20Logo_Final_CMYK.jpg", "alt": "Groeneveld-Beka" },
+        { "file": "DTBird.png", "alt": "DTBird" },
+        { "file": "Livit_CI_Symbol_Letter_Black.png", "alt": "Livit" },
+        { "file": "%ED%95%9C%EA%B5%AD%EC%9D%BC%EB%B6%84%EC%84%9D%EA%B8%B0%EC%88%A0-.png", "alt": "한국일분석기술" },
+        { "file": "Studer-Cables_HARTING_RGB.png", "alt": "HARTING" },
+        { "file": "KakaoTalk_20250304_112820699_03.jpg", "alt": "" },
+        { "file": "%ED%95%9C%EA%B5%AD%EC%BD%94%EB%A6%AC%EC%95%84_%EB%A1%9C%EA%B3%A0.png", "alt": "한국코리아" },
+        { "file": "ECOS%20Group.png", "alt": "ECOS Group" },
+        { "file": "%EC%8B%A0%EC%9D%BCPMS%20%EB%A1%9C%EA%B3%A0.png", "alt": "신진PMS" },
+        { "file": "%ED%9A%8C%EC%82%AC%EB%A1%9C%EA%B3%A0%20%EA%B5%AD%EB%AC%B8.jpg", "alt": "" },
+        { "file": "%EA%B7%B8%EB%A6%BC2[2].png", "alt": "" },
+        { "file": "%EB%A1%9C%EA%B3%A0%20%EA%B0%80%EB%A1%9C%ED%98%95.jpg", "alt": "" },
+        { "file": "%EB%AF%B8%EB%9E%98%EC%97%94%EC%95%84%EC%9D%B4Corp.jpg", "alt": "미래엔아이" },
+        { "file": "%EC%97%A0%ED%85%8C%ED%81%AC_%EB%A1%9C%EA%B3%A0.jpg", "alt": "엠테크" }
+      ]
+    }
+  ]
+}

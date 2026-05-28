@@ -1,14 +1,6 @@
 (function () {
   'use strict';
-
-  var scrollBtn = document.querySelector('[data-scroll-top]');
-  if (scrollBtn) {
-    scrollBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  var stage = document.querySelector('[data-map-stage]');
+var stage = document.querySelector('[data-map-stage]');
   var label = document.querySelector('[data-zoom-label]');
   if (!stage || !label) {
     return;

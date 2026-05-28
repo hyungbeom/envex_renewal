@@ -284,10 +284,6 @@ body {
     gap: 16px !important;
   }
 
-  .info-hero-floats {
-    display: none !important;
-  }
-
   /* exh-hero 패턴: 히어로 바로 아래 서브메뉴 (120px 여백 제거) */
   .info-page-top--exh .info-subnav {
     margin-top: 0 !important;
@@ -477,10 +473,6 @@ body {
     font-size: 14px !important;
     line-height: 168% !important;
     gap: 14px !important;
-  }
-
-  .info-hero-floats {
-    display: none !important;
   }
 
   /* exh-hero: 모바일 타이틀·부제 세로·가로 중앙, 높이 284px 통일 */

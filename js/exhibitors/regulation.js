@@ -1,14 +1,6 @@
 (function () {
   'use strict';
-
-  var scrollBtn = document.querySelector('[data-scroll-top]');
-  if (scrollBtn) {
-    scrollBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  var regTitle = document.getElementById('reg-terms-title');
+var regTitle = document.getElementById('reg-terms-title');
   if (regTitle && typeof regTitle.focus === 'function') {
     setTimeout(function () {
       regTitle.focus();

@@ -1,0 +1,418 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>온라인 전시관 | ENVEX 2026</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/online/online.css">
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <meta name="theme-color" content="#0355E3">
+</head>
+
+<body class="online-body">
+  <header class="online-header">
+    <div class="online-header-inner container">
+      <a href="../index.html" class="online-logo-link" aria-label="ENVEX 메인으로 이동">
+        <img src="../img/logo.svg" alt="ENVEX 로고" class="online-logo">
+      </a>
+
+      <div class="online-header-tools">
+        <button type="button" class="online-lang online-lang--active">KO</button>
+        <span class="online-lang-sep">|</span>
+        <button type="button" class="online-lang">EN</button>
+        <a href="#" class="online-mypage">마이페이지</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="online-hero">
+      <div class="online-hero-bg" aria-hidden="true">
+        <div class="online-logo-grid">
+          <span>Apple</span><span>Amazon</span><span>Tesla</span><span>Microsoft</span><span>MI</span><span>ExxonMobil</span><span>FedEx</span><span>Toyota</span><span>VISA</span><span>KIA</span><span>Huawei</span><span>Hisense</span>
+          <span>Adidas</span><span>Pfizer</span><span>VW</span><span>Verizon</span><span>SK</span><span>NVIDIA</span><span>Nike</span><span>Nokia</span><span>Rivian</span><span>Huobi</span><span>Sinopec</span><span>Airbnb</span>
+          <span>FILA</span><span>Shell</span><span>DIDI</span><span>Crest</span><span>Deutsche Bahn</span><span>Foodpanda</span><span>DM</span><span>Ferrero</span>
+        </div>
+      </div>
+
+      <div class="online-search-wrap container">
+        <form class="online-search" role="search">
+          <div class="online-search-field">
+            <span class="online-search-icon" aria-hidden="true">
+              <img src="../img/icon/search.svg" alt="" width="24" height="24">
+            </span>
+            <label for="online-search-input" class="sr-only">검색어 입력</label>
+            <input id="online-search-input" type="search" placeholder="참가업체/키워드 검색">
+          </div>
+          <div class="online-search-filter">
+            <label for="online-search-category" class="sr-only">카테고리 선택</label>
+            <select id="online-search-category">
+              <option>전체</option>
+              <option>수질</option>
+              <option>대기</option>
+              <option>측정분석</option>
+              <option>탄소중립</option>
+            </select>
+          </div>
+        </form>
+      </div>
+
+      <div class="online-float-btns" aria-hidden="true">
+        <span class="online-float-dot online-float-dot--blue"></span>
+        <span class="online-float-dot online-float-dot--gray"></span>
+        <button type="button" class="online-float-top">⌃</button>
+      </div>
+    </section>
+
+    <section class="online-summary">
+      <div class="online-summary-inner container">
+        <div class="online-summary-title">
+          <p>국제환경산업기술 &amp; 그린에너지전</p>
+          <h1>ENVEX 온라인 전시관</h1>
+        </div>
+        <p class="online-summary-date">2027. 05. 20.(수) ~ 05. 22.(금)</p>
+        <p class="online-summary-place">COEX A Hall &amp; East Lobby</p>
+      </div>
+    </section>
+
+    <section class="online-categories">
+      <div class="online-categories-inner container">
+        <a href="#" class="online-category-item">
+          <img src="../img/online/water.svg" alt="">
+          <span>수질</span>
+        </a>
+        <a href="#" class="online-category-item">
+          <img src="../img/online/wind.svg" alt="">
+          <span>대기</span>
+        </a>
+        <a href="#" class="online-category-item">
+          <img src="../img/online/measure.svg" alt="">
+          <span>측정분석</span>
+        </a>
+        <a href="#" class="online-category-item">
+          <img src="../img/online/cos.svg" alt="">
+          <span>탄소융합</span>
+        </a>
+        <a href="#" class="online-category-item">
+          <img src="../img/online/overseas.svg" alt="">
+          <span>외국관</span>
+        </a>
+        <a href="#" class="online-category-item">
+          <img src="../img/online/institute.svg" alt="">
+          <span>기관 및 단체 / 홍보관</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="online-exhibitors">
+      <div class="online-exhibitors-inner container">
+        <div class="online-exhibitors-head">
+          <h2>ENVEX 참가업체</h2>
+          <div class="online-filter">
+            <button
+              type="button"
+              class="online-filter-btn"
+              aria-label="필터 열기"
+              aria-expanded="false"
+              aria-controls="online-filter-panel"
+            >
+              <img src="../img/icon/filter.svg" width="48" height="48" alt="" aria-hidden="true">
+            </button>
+            <div class="online-filter-panel" id="online-filter-panel" hidden>
+              <div class="online-filter-grid online-filter-grid--hangul" role="group" aria-label="한글 초성">
+                <button type="button" class="online-filter-key" data-filter="ㄱ">ㄱ</button>
+                <button type="button" class="online-filter-key" data-filter="ㄴ">ㄴ</button>
+                <button type="button" class="online-filter-key" data-filter="ㄷ">ㄷ</button>
+                <button type="button" class="online-filter-key" data-filter="ㄹ">ㄹ</button>
+                <button type="button" class="online-filter-key" data-filter="ㅁ">ㅁ</button>
+                <button type="button" class="online-filter-key" data-filter="ㅂ">ㅂ</button>
+                <button type="button" class="online-filter-key" data-filter="ㅅ">ㅅ</button>
+                <button type="button" class="online-filter-key" data-filter="ㅇ">ㅇ</button>
+                <button type="button" class="online-filter-key" data-filter="ㅈ">ㅈ</button>
+                <button type="button" class="online-filter-key" data-filter="ㅊ">ㅊ</button>
+                <button type="button" class="online-filter-key" data-filter="ㅋ">ㅋ</button>
+                <button type="button" class="online-filter-key" data-filter="ㅌ">ㅌ</button>
+                <button type="button" class="online-filter-key" data-filter="ㅍ">ㅍ</button>
+                <button type="button" class="online-filter-key" data-filter="ㅎ">ㅎ</button>
+              </div>
+              <div class="online-filter-grid online-filter-grid--alpha" role="group" aria-label="영문">
+                <button type="button" class="online-filter-key" data-filter="A">A</button>
+                <button type="button" class="online-filter-key" data-filter="B">B</button>
+                <button type="button" class="online-filter-key" data-filter="C">C</button>
+                <button type="button" class="online-filter-key" data-filter="D">D</button>
+                <button type="button" class="online-filter-key" data-filter="E">E</button>
+                <button type="button" class="online-filter-key" data-filter="F">F</button>
+                <button type="button" class="online-filter-key" data-filter="G">G</button>
+                <button type="button" class="online-filter-key" data-filter="H">H</button>
+                <button type="button" class="online-filter-key" data-filter="I">I</button>
+                <button type="button" class="online-filter-key" data-filter="J">J</button>
+                <button type="button" class="online-filter-key" data-filter="K">K</button>
+                <button type="button" class="online-filter-key" data-filter="L">L</button>
+                <button type="button" class="online-filter-key" data-filter="M">M</button>
+                <button type="button" class="online-filter-key" data-filter="N">N</button>
+                <button type="button" class="online-filter-key" data-filter="O">O</button>
+                <button type="button" class="online-filter-key" data-filter="P">P</button>
+                <button type="button" class="online-filter-key" data-filter="Q">Q</button>
+                <button type="button" class="online-filter-key" data-filter="R">R</button>
+                <button type="button" class="online-filter-key" data-filter="S">S</button>
+                <button type="button" class="online-filter-key" data-filter="T">T</button>
+                <button type="button" class="online-filter-key" data-filter="W">W</button>
+                <button type="button" class="online-filter-key" data-filter="U">U</button>
+                <button type="button" class="online-filter-key" data-filter="V">V</button>
+                <button type="button" class="online-filter-key" data-filter="X">X</button>
+                <button type="button" class="online-filter-key" data-filter="Y">Y</button>
+                <button type="button" class="online-filter-key" data-filter="Z">Z</button>
+              </div>
+              <button type="button" class="online-filter-key online-filter-key--num" data-filter="num">123...</button>
+              <button type="button" class="online-filter-all" data-filter="all">전체</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="online-exhibitors-grid">
+          <article class="exhibitor-card">
+            <div class="exhibitor-card-top">
+              <div class="exhibitor-badges"><span class="exhibitor-badge-booth">E23</span><span class="exhibitor-badge-year">'26</span></div>
+              <button type="button" class="exhibitor-fav" aria-label="즐겨찾기">
+                <svg class="exhibitor-fav-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5.5 3.5H14.5L15 16.5L10 13.2L5 16.5L5.5 3.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <p class="exhibitor-desc">휴렉은 2015년 법인 설립 이래 음식물처리기를 지속적으로 연구개발, 생산하면서 싱크대 일체형 음식물처리기 솔루션을 제공합니다.</p>
+            <div class="exhibitor-tag-block">
+              <div class="exhibitor-tags"><span>휴렉</span><span>음식물처리기</span><span>가정용음식물처리기</span></div>
+              <a href="#" class="exhibitor-inquiry">문의하기</a>
+            </div>
+            <div class="exhibitor-card-lower">
+            <div class="exhibitor-media">
+              <img src="../img/sample/sample1.jpg" alt="">
+              <img src="../img/sample/sample2.jpg" alt="">
+              <img src="../img/sample/sample3.jpg" alt="">
+            </div>
+            <div class="exhibitor-card-spacer" aria-hidden="true"></div>
+            <div class="exhibitor-company">
+              <div class="exhibitor-logo-mark">HULEC</div>
+              <span class="exhibitor-company-divider" aria-hidden="true"></span>
+              <div class="exhibitor-company-text">
+                <p>HULEC</p>
+                <strong>휴렉</strong>
+              </div>
+            </div>
+            </div>
+          </article>
+
+          <article class="exhibitor-card">
+            <div class="exhibitor-card-top">
+              <div class="exhibitor-badges"><span class="exhibitor-badge-booth">E7</span><span class="exhibitor-badge-year">'26</span></div>
+              <button type="button" class="exhibitor-fav" aria-label="즐겨찾기">
+                <svg class="exhibitor-fav-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5.5 3.5H14.5L15 16.5L10 13.2L5 16.5L5.5 3.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <p class="exhibitor-desc">스마트카라 음식물처리기 전문 브랜드, 일상 속에서 발생하는 음식물 쓰레기를 깔끔하게 줄입니다.</p>
+            <div class="exhibitor-tag-block">
+              <div class="exhibitor-tags"><span>음식물처리기</span><span>SMARTCARA</span><span>주방가전</span></div>
+              <a href="#" class="exhibitor-inquiry">문의하기</a>
+            </div>
+            <div class="exhibitor-card-lower">
+            <div class="exhibitor-media">
+              <img src="../img/sample/sample4.jpg" alt="">
+              <img src="../img/sample/sample5.jpg" alt="">
+              <img src="../img/sample/sample6.jpg" alt="">
+            </div>
+            <div class="exhibitor-card-spacer" aria-hidden="true"></div>
+            <div class="exhibitor-company">
+              <div class="exhibitor-logo-mark">SMART<br>CARA</div>
+              <span class="exhibitor-company-divider" aria-hidden="true"></span>
+              <div class="exhibitor-company-text">
+                <p>SMARTCARA CO.,LTD.</p>
+                <strong>(주) 스마트카라</strong>
+              </div>
+            </div>
+            </div>
+          </article>
+
+          <article class="exhibitor-card">
+            <div class="exhibitor-card-top">
+              <div class="exhibitor-badges"><span class="exhibitor-badge-booth">A13</span><span class="exhibitor-badge-year">'26</span></div>
+              <button type="button" class="exhibitor-fav" aria-label="즐겨찾기">
+                <svg class="exhibitor-fav-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5.5 3.5H14.5L15 16.5L10 13.2L5 16.5L5.5 3.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <p class="exhibitor-desc">한니 1991년 설립 후 수처리·정화설비 및 분석 장비를 전문 공급하며 고객 맞춤형 엔지니어링을 지원합니다.</p>
+            <div class="exhibitor-tag-block">
+              <div class="exhibitor-tags"><span>상수도 정화장비</span><span>유속측정기</span><span>분석시스템</span></div>
+              <a href="#" class="exhibitor-inquiry">문의하기</a>
+            </div>
+            <div class="exhibitor-card-lower">
+            <div class="exhibitor-media">
+              <img src="../img/sample/sample7.jpg" alt="">
+              <img src="../img/sample/sample8.jpg" alt="">
+              <img src="../img/sample/sample9.jpg" alt="">
+            </div>
+            <div class="exhibitor-card-spacer" aria-hidden="true"></div>
+            <div class="exhibitor-company">
+              <div class="exhibitor-logo-mark">hani</div>
+              <span class="exhibitor-company-divider" aria-hidden="true"></span>
+              <div class="exhibitor-company-text">
+                <p>hani network engineering</p>
+                <strong>한니트웍엔지니어링</strong>
+              </div>
+            </div>
+            </div>
+          </article>
+
+          <article class="exhibitor-card">
+            <div class="exhibitor-card-top">
+              <div class="exhibitor-badges"><span class="exhibitor-badge-booth">K04</span><span class="exhibitor-badge-year">'26</span></div>
+              <button type="button" class="exhibitor-fav" aria-label="즐겨찾기">
+                <svg class="exhibitor-fav-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5.5 3.5H14.5L15 16.5L10 13.2L5 16.5L5.5 3.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <p class="exhibitor-desc">당사의 사업 분야는 대기환경 방지시설 인·허가, 구조물 신설·보강, 환경 평가 검사, 제어 솔루션입니다.</p>
+            <div class="exhibitor-tag-block">
+              <div class="exhibitor-tags"><span>약품주입</span><span>배관</span><span>방지시설</span><span>집진</span></div>
+              <a href="#" class="exhibitor-inquiry">문의하기</a>
+            </div>
+            <div class="exhibitor-card-lower">
+            <div class="exhibitor-media">
+              <img src="../img/sample/sample10.jpg" alt="">
+              <img src="../img/sample/sample11.jpg" alt="">
+              <img src="../img/sample/sample12.jpg" alt="">
+            </div>
+            <div class="exhibitor-card-spacer" aria-hidden="true"></div>
+            <div class="exhibitor-company">
+              <div class="exhibitor-logo-mark">Won<br>Kwang</div>
+              <span class="exhibitor-company-divider" aria-hidden="true"></span>
+              <div class="exhibitor-company-text">
+                <p>Won Kwang S&T Co.,Ltd</p>
+                <strong>(주)원광에스앤티</strong>
+              </div>
+            </div>
+            </div>
+          </article>
+
+          <article class="exhibitor-card">
+            <div class="exhibitor-card-top">
+              <div class="exhibitor-badges"><span class="exhibitor-badge-booth">K02</span><span class="exhibitor-badge-year">'26</span></div>
+              <button type="button" class="exhibitor-fav" aria-label="즐겨찾기">
+                <svg class="exhibitor-fav-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5.5 3.5H14.5L15 16.5L10 13.2L5 16.5L5.5 3.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <p class="exhibitor-desc">(주)마이크로원은 2006년 3월 창립 이후 친환경 필터와 흡착 소재를 중심으로 분리막 솔루션을 제공합니다.</p>
+            <div class="exhibitor-tag-block">
+              <div class="exhibitor-tags"><span>수처리필터</span><span>흡착</span><span>정밀필터</span><span>분리막</span></div>
+              <a href="#" class="exhibitor-inquiry">문의하기</a>
+            </div>
+            <div class="exhibitor-card-lower">
+            <div class="exhibitor-media">
+              <img src="../img/sample/sample13.jpg" alt="">
+              <img src="../img/sample/sample1.jpg" alt="">
+              <img src="../img/sample/sample2.jpg" alt="">
+            </div>
+            <div class="exhibitor-card-spacer" aria-hidden="true"></div>
+            <div class="exhibitor-company">
+              <div class="exhibitor-logo-mark">MICRO<br>ONE</div>
+              <span class="exhibitor-company-divider" aria-hidden="true"></span>
+              <div class="exhibitor-company-text">
+                <p>MICRO-ONE Co.,Ltd</p>
+                <strong>(주)마이크로원</strong>
+              </div>
+            </div>
+            </div>
+          </article>
+
+          <article class="exhibitor-card">
+            <div class="exhibitor-card-top">
+              <div class="exhibitor-badges"><span class="exhibitor-badge-booth">C10</span><span class="exhibitor-badge-year">'26</span></div>
+              <button type="button" class="exhibitor-fav" aria-label="즐겨찾기">
+                <svg class="exhibitor-fav-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5.5 3.5H14.5L15 16.5L10 13.2L5 16.5L5.5 3.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <p class="exhibitor-desc">아르젠코리아는 독일 Aerzener Maschinenfabrik의 공식 파트너로 고효율 블로워·압축기 솔루션을 제공합니다.</p>
+            <div class="exhibitor-tag-block">
+              <div class="exhibitor-tags"><span>블로워</span><span>스크류컴프레서</span><span>소형콤프</span><span>감속기</span></div>
+              <a href="#" class="exhibitor-inquiry">문의하기</a>
+            </div>
+            <div class="exhibitor-card-lower">
+            <div class="exhibitor-media">
+              <img src="../img/sample/sample3.jpg" alt="">
+              <img src="../img/sample/sample4.jpg" alt="">
+              <img src="../img/sample/sample5.jpg" alt="">
+            </div>
+            <div class="exhibitor-card-spacer" aria-hidden="true"></div>
+            <div class="exhibitor-company">
+              <div class="exhibitor-logo-mark">AERZEN</div>
+              <span class="exhibitor-company-divider" aria-hidden="true"></span>
+              <div class="exhibitor-company-text">
+                <p>AERZEN KOREA LTD</p>
+                <strong>아르젠코리아 유한회사</strong>
+              </div>
+            </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="online-exhibitors-more-wrap">
+          <button type="button" class="online-exhibitors-more">더보기</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer-section">
+    <div class="footer-body container">
+      <div class="footer-info-group">
+        <div class="footer-info">
+          <div>서울시 성동구 광나루로 320-2 YD빌딩</div>
+          <div>TEL. 02-3407-1540~3</div>
+          <div>FAX. 02-3409-8351</div>
+        </div>
+        <div class="footer-biz">
+          <div>사업자등록번호 : 104-82-03056</div>
+          <div>대표자 : 신진수</div>
+        </div>
+      </div>
+
+      <div class="footer-sns">
+        <img src="../img/youtube.svg" alt="유튜브">
+        <img src="../img/blog.svg" alt="블로그">
+        <img src="../img/insta.svg" alt="인스타그램">
+        <img src="../img/aving.svg" alt="에이빙">
+      </div>
+
+      <div class="footer-links">
+        <div>개인정보 처리방침</div>
+        <div class="divider"></div>
+        <div>사이트맵</div>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      Copyright© KOREA ENVIRONMENT INSTITUTE ALL RESERVED.
+    </div>
+
+    <div class="footer-bg-text">
+      <span class="footer-brand-mark">ENVEX<span class="footer-year">2026</span></span>
+    </div>
+  </div>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/online/online.js"></script>
+</body>
+
+</html>
